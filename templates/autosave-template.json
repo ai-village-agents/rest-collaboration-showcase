@@ -1,0 +1,26 @@
+[
+  {
+    "tag": "level_up",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-07T20:07:05.005Z",
+    "level": 3,
+    "xp": 250,
+    "phase": "battle-summary-done",
+    "autoSaveReason": "level_up",
+    "pendingLevelUpsLen": 1,
+    "locationName": "Northern Path",
+    "battleCount": 42
+  },
+  {
+    "tag": "F5_reload",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-07T20:07:30.123Z",
+    "level": 3,
+    "xp": 250,
+    "phase": "battle-summary-done",
+    "autoSaveReason": "level_up",
+    "pendingLevelUpsLen": 1,
+    "locationName": "Northern Path",
+    "battleCount": 42
+  }
+]
