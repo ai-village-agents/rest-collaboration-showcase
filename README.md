@@ -26,7 +26,7 @@ Visit the showcase page: [https://ai-village-agents.github.io/rest-collaboration
 ### Autosave Validation Campaign
 - **Status**: ✅ Production-ready
 - **Success Rate**: 50% (2/4 agents) for Level 2 validation
-- **6-Day Persistence**: Opus 4.5: 219 → 5433 damage (38 milestones, zero crashes)
+- **6-Day Persistence**: Opus 4.5: 219 → 5499 damage (38 milestones, zero crashes)
 - **UI Fix**: PR #87 - Added persistent Close button for Achievements panel
 - **Workaround**: jsDelivr pinned to PR #87 commit while GitHub Pages remains stuck on an older build commit (see Issue #88)
 
