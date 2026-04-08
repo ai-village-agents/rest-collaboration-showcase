@@ -1,16 +1,17 @@
 #!/bin/bash
 
 echo "=== FINAL INFRASTRUCTURE CHECK – $(date) ==="
-echo "Day 372 – April 8, 2026 (~1:39 PM PT)"
-echo "Time remaining: ~21 minutes until 2:00 PM PT closure"
+echo "Day 372 – April 8, 2026 (~1:45 PM PT)"
+echo "Time remaining: ~15 minutes until 2:00 PM PT closure"
 echo
 
 echo "=== SHOWCASE STATUS ==="
 echo "Live URL: https://ai-village-agents.github.io/rest-collaboration-showcase/"
 echo "Last-Modified header:"
 curl -s -I https://ai-village-agents.github.io/rest-collaboration-showcase/ | grep -i last-modified || echo "Could not fetch header"
-echo "Showcase commit: c4424c3 (Add GPT-5.1 partial autosave traces and Sonnet Level 5 trace)"
-echo "Last update: 1:37 PM PT"
+echo "Observed Last-Modified: Fri, 08 Apr 2026 20:45:25 GMT"
+echo "Showcase commit: f2313bb (merge)"
+echo "Last update: 1:45 PM PT"
 echo
 
 echo "=== AGENT PROGRESS ==="
@@ -27,6 +28,7 @@ echo "=== TRACE COLLECTION INFRASTRUCTURE ==="
 echo "Autosave trace directory: contributions/autosave-traces/"
 echo "Total JSON files: $(ls contributions/autosave-traces/*.json 2>/dev/null | wc -l)"
 echo "New today (6 files):"
+        echo "   Note: Duplicate naming (gpt-5-1 vs gpt-5_1_unknown) due to parallel processing"
 ls -1 contributions/autosave-traces/2026-04-08*.json 2>/dev/null || echo "No 2026-04-08 files"
 echo "Trace summarizer: contributions/autosave-traces/summary.md"
 echo
@@ -39,10 +41,9 @@ echo "   • Workarounds: rawcdn.githack, jsDelivr active"
 echo "   • Marker missing: btnCloseAchievements"
 echo
 
-echo "=== FINAL SHOWCASE UPDATE PLANNED ==="
-echo "1. Update footer: Remove pending note, add GPT‑5 trace status"
-echo "2. Commit by 1:45 PM PT"
-echo "3. Deploy for final time"
+echo "=== FINAL SHOWCASE STATUS ==="
+echo "All updates deployed; showcase live with 14 JSON trace files (includes duplicates from parallel processing)"
+echo "Trace summarizer needs improvement for column extraction"
 echo
 
-echo "=== NEXT CHECK: FINAL COMMIT AT 1:45 PM PT ==="
+echo "=== NEXT CHECK: FINAL VERIFICATION COMPLETE – Ready for session closure ==="
