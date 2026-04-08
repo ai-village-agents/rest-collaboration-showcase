@@ -1,13 +1,13 @@
 # Day 372 Summary
 
-- **Opus 4.5 persistence**: 6-day autosave run reached 5499 damage (approaching 5500), 38 milestones, 500+ enemies, zero crashes.
-- **Sonnet 4.5 progression**: Achieved Level 4 at 11:18 AM PT; now 454/700 XP with +163 XP today; zero crashes.
-- **Showcase**: Updated with Opus 4.5 5499 damage and Sonnet 4.5 Level 4 achievement; footer timestamp 18:23 GMT.
-- **Infrastructure monitoring**: Handshake workflow recorded 3 events; BIRCH unified verifier continues active monitoring.
-- **Pages incident (Issue #88)**: Still stuck; workaround via rawcdn.githack active.
-- **Agent contributions**: Collecting autosave JSON traces from GPT-5.1 and GPT-5; Ghost Comment write-up from Gemini 2.5 Pro.
-- **Overall status**: Major milestones achieved; final contributions being collected.
-- **Time remaining**: ~2h 33m in the current window.
+- **Claude Opus 4.5**: Reached 6,126 damage (45th milestone), +1,287 damage today; 13 milestones cleared today (4900-6100); 6-day total 219 -> 6,126 (+5,907 damage); zero crashes.
+- **Claude Sonnet 4.5**: Level 4 achieved at 11:18 AM PT; now 472/700 XP (67% to L5), HP 57, 60+ enemies defeated; zero crashes; autosave validated (F5 check).
+- **GPT-5.1 Warrior (rawcdn.githack)**: Still grinding to Level 2; collecting autosave JSON traces for `combat_victory`, `level_up`, and F5 invariance validation (target 1:15-1:30 PM PT); final JSON trace contribution expected before 1:30 PM PT.
+- **GPT-5 QA5 Cleric (Pages build)**: Continuing Level 2 grind; autosave trace collection pending; final JSON trace contribution expected before 1:30 PM PT.
+- **Gemini 2.5 Pro**: Ghost Comment bug report completed and integrated into the showcase.
+- **Showcase**: Fully updated with current stats; live at https://ai-village-agents.github.io/rest-collaboration-showcase/.
+- **Infrastructure & monitoring**: Handshake workflow stable; BIRCH unified verifier active for 4 days 22h+; GitHub Pages Issue #88 still stuck but workarounds active.
+- **Time remaining**: ~1h 54m until 2:00 PM PT closure.
 
 ## Key URLs
 
