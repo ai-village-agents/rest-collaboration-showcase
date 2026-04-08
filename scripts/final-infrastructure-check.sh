@@ -1,11 +1,11 @@
 #!/bin/bash
-# Final Infrastructure Check - Day 372 (1:30 PM PT)
+# Final Infrastructure Check - Day 372 (1:05 PM PT)
 
 echo "=== #rest FINAL INFRASTRUCTURE CHECK - Day 372 ==="
 echo "Timestamp: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 echo "Village Day: 372"
 echo "Session: 10:00 AM - 2:00 PM PT"
-echo "Check Time: ~1:30 PM PT"
+echo "Check Time: ~1:10 PM PT"
 echo ""
 
 echo "1. HANDHAKE WORKFLOW STATUS"
@@ -35,7 +35,7 @@ echo ""
 echo "3. SHOWCASE DEPLOYMENT"
 echo "======================"
 SHOWCASE_URL="https://ai-village-agents.github.io/rest-collaboration-showcase/"
-if curl -s -I "$SHOWCASE_URL" | grep -q "200 OK"; then
+if curl -s -I "$SHOWCASE_URL" | grep -q "200"; then
     LAST_MOD=$(curl -s -I "$SHOWCASE_URL" | grep -i "last-modified" || echo "Last-Modified: unknown")
     echo "   ✅ Live"
     echo "   $LAST_MOD"
@@ -63,6 +63,8 @@ if [ -d "$TRACES_DIR" ]; then
     echo "   Directory: $TRACES_DIR"
     echo "   JSON files: $COUNT"
     echo "   README: $( [ -f "$TRACES_DIR/README.md" ] && echo "✅ Present" || echo "❌ Missing" )"
+    echo "   Trace summarizer: tools/summarize_autosave_traces.py"
+    echo "   Naming template: see README"
     echo "   Pending: GPT-5.1 Warrior traces, GPT-5 QA5 Cleric traces"
 else
     echo "   ❌ Directory not found"
@@ -71,19 +73,19 @@ fi
 echo ""
 echo "6. AGENT PROGRESS SUMMARY (Day 372)"
 echo "=================================="
-echo "   Claude Opus 4.5: 6,500+ damage (49th milestone, +1,661 today)"
-echo "   Claude Sonnet 4.5: Level 4, XP 515/700 (74% to L5)"
-echo "   GPT-5.1: Warrior L2 traces pending (githack)"
-echo "   GPT-5: QA5 Cleric L2 traces pending (Pages)"
-echo "   Gemini 2.5 Pro: Ghost comment bug report + conversation persistence PR"
+echo "   Claude Opus 4.5: 6,808 damage (52nd milestone, +1,969 today), HP 37/55, Poison 2, Potions 10"
+echo "   Claude Sonnet 4.5: Level 4, XP 568/700 (81% to L5), HP 47/57, 70+ enemies defeated, zero crashes"
+echo "   GPT-5.1: Warrior L2 traces pending (githack) - expected combat_victory, level_up, F5 invariance plus Pages 48/53 XP traces"
+echo "   GPT-5: QA5 Cleric L2 traces pending (Pages build) - expected level_up and post-F5 validation"
+echo "   Gemini 2.5 Pro: Ghost comment bug report repository created and integrated into showcase footer"
 
 echo ""
 echo "7. TIME STATUS"
 echo "=============="
 echo "   Session start: 10:00 AM PT"
-echo "   Current: ~1:30 PM PT"
+echo "   Current: ~1:10 PM PT"
 echo "   Closure: 2:00 PM PT"
-echo "   Time remaining: ~30 minutes"
+echo "   Time remaining: ~50 minutes"
 
 echo ""
 echo "=== END FINAL CHECK ==="
