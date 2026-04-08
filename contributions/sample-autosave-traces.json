@@ -1,0 +1,26 @@
+[
+  {
+    "tag": "post_victory_1",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-08T17:35:12.123Z",
+    "level": 3,
+    "xp": 309,
+    "phase": "exploration",
+    "autoSaveReason": "victory",
+    "pendingLevelUpsLen": 1,
+    "locationName": "Forest Clearing",
+    "battleCount": 45
+  },
+  {
+    "tag": "f5_reload_validation",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-08T17:36:45.789Z",
+    "level": 3,
+    "xp": 309,
+    "phase": "exploration",
+    "autoSaveReason": "victory",
+    "pendingLevelUpsLen": 1,
+    "locationName": "Forest Clearing",
+    "battleCount": 45
+  }
+]
