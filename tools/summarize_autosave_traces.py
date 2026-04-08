@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""Summarize autosave trace JSON files under contributions/autosave-traces/.
+
+Purpose
+- When multiple agents drop raw JSON traces, this script produces a quick, human-readable
+  summary (Markdown) so maintainers can sanity-check that traces are present and coherent.
+
+Usage
+  python3 tools/summarize_autosave_traces.py \
+    --dir contributions/autosave-traces \
+    --format md
+
+Notes
+- Accepts either:
+  (a) the save object itself (with keys like player/phase/autoSaveReason/savedAt), or
+  (b) a wrapper object with a top-level `save` field containing the save.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+from dataclasses import dataclass
+from datetime import datetime
+from glob import glob
+from typing import Any, Dict, Optional, Tuple
+
+
+@dataclass
+class Row:
+    filename: str
+    agent: Optional[str]
+    build: Optional[str]
+    event: Optional[str]
+    save_key: Optional[str]
+    level: Optional[int]
+    xp: Optional[int]
+    phase: Optional[str]
+    auto_save_reason: Optional[str]
+    pending_levelups: Optional[int]
+    saved_at: Optional[str]
+
+
+def _dig_save(obj: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    """Return (wrapper, save). If no wrapper, wrapper=={} and save==obj."""
+    if isinstance(obj, dict) and isinstance(obj.get("save"), dict):
+        return obj, obj["save"]
+    return {}, obj
+
+
+def _get_int(x: Any) -> Optional[int]:
+    try:
+        if x is None:
+            return None
+        if isinstance(x, bool):
+            return None
+        return int(x)
+    except Exception:
+        return None
+
+
+def _isoish(x: Any) -> Optional[str]:
+    if not x:
+        return None
+    if isinstance(x, str):
+        return x
+    return None
+
+
+def parse_trace(path: str) -> Row:
+    with open(path, "r", encoding="utf-8") as f:
+        obj = json.load(f)
+
+    wrapper, save = _dig_save(obj if isinstance(obj, dict) else {})
+
+    player = save.get("player") if isinstance(save, dict) else None
+    if not isinstance(player, dict):
+        player = {}
+
+    pending = save.get("pendingLevelUps")
+    pending_len = None
+    if isinstance(pending, list):
+        pending_len = len(pending)
+
+    return Row(
+        filename=os.path.basename(path),
+        agent=(wrapper.get("agent") if wrapper else None),
+        build=(wrapper.get("build") if wrapper else None),
+        event=(wrapper.get("event") if wrapper else None),
+        save_key=(wrapper.get("saveKey") if wrapper else None),
+        level=_get_int(player.get("level")),
+        xp=_get_int(player.get("xp")),
+        phase=(save.get("phase") if isinstance(save.get("phase"), str) else None),
+        auto_save_reason=(
+            save.get("autoSaveReason")
+            if isinstance(save.get("autoSaveReason"), str)
+            else None
+        ),
+        pending_levelups=pending_len,
+        saved_at=_isoish(save.get("savedAt")),
+    )
+
+
+def as_md(rows: list[Row]) -> str:
+    lines = []
+    lines.append(f"Generated: {datetime.utcnow().isoformat(timespec='seconds')}Z")
+    lines.append("")
+    lines.append("| file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |")
+    lines.append("|---|---|---|---|---|---:|---:|---|---|---:|---|")
+    for r in rows:
+        lines.append(
+            "| {file} | {agent} | {build} | {event} | {save_key} | {lvl} | {xp} | {phase} | {reason} | {pend} | {saved_at} |".format(
+                file=r.filename,
+                agent=r.agent or "",
+                build=r.build or "",
+                event=r.event or "",
+                save_key=r.save_key or "",
+                lvl="" if r.level is None else r.level,
+                xp="" if r.xp is None else r.xp,
+                phase=r.phase or "",
+                reason=r.auto_save_reason or "",
+                pend="" if r.pending_levelups is None else r.pending_levelups,
+                saved_at=r.saved_at or "",
+            )
+        )
+    return "\n".join(lines) + "\n"
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--dir",
+        default="contributions/autosave-traces",
+        help="Directory containing .json traces",
+    )
+    ap.add_argument(
+        "--format",
+        default="md",
+        choices=["md", "json"],
+        help="Output format",
+    )
+    args = ap.parse_args()
+
+    paths = sorted(glob(os.path.join(args.dir, "*.json")))
+    rows = []
+    for p in paths:
+        try:
+            rows.append(parse_trace(p))
+        except Exception as e:
+            rows.append(
+                Row(
+                    filename=os.path.basename(p),
+                    agent=None,
+                    build=None,
+                    event=None,
+                    save_key=None,
+                    level=None,
+                    xp=None,
+                    phase=None,
+                    auto_save_reason=f"ERROR: {type(e).__name__}",
+                    pending_levelups=None,
+                    saved_at=None,
+                )
+            )
+
+    if args.format == "json":
+        print(json.dumps([r.__dict__ for r in rows], indent=2))
+    else:
+        print(as_md(rows))
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
