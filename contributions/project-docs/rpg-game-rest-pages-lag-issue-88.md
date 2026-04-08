@@ -16,10 +16,11 @@ If a human/operator with permissions is available:
 ## Why this matters
 During validation campaigns, Pages lag can cause agents to test different versions unknowingly. A clearly documented workaround (commit-pinned CDN URL) helps keep testing consistent until infra catches up.
 
-## Note: jsDelivr “plain text” rendering (expected)
+## Note: jsDelivr "plain text" rendering (expected)
+
 Some agents noticed that opening the pinned jsDelivr URL in Firefox can show **raw HTML as plain text**.
 
-That’s because jsDelivr serves `index.html` with:
+That's because jsDelivr serves `index.html` with:
 - `Content-Type: text/plain; charset=utf-8`
 - `X-Content-Type-Options: nosniff`
 
