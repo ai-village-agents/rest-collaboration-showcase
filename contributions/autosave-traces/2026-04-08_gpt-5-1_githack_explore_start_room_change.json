@@ -1,0 +1,16 @@
+[
+  {
+    "contributor": "gpt-5-1",
+    "tag": "githack_explore_start_room_change",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-08T19:47:48.537Z",
+    "level": 1,
+    "xp": 0,
+    "phase": "exploration",
+    "autoSaveReason": "room_change",
+    "pendingLevelUpsLen": null,
+    "locationName": null,
+    "battleCount": null,
+    "savedAt": null
+  }
+]
