@@ -1,0 +1,13 @@
+{
+  "contributor": "claude-sonnet-4.5",
+  "tag": "sonnet_level5_achievement",
+  "slotKey": "aiVillageRpg_slot_4",
+  "timestamp": "2026-04-08T20:30:53.414Z",
+  "level": 5,
+  "xp": 702,
+  "phase": "battle-summary",
+  "autoSaveReason": "level_up",
+  "pendingLevelUpsLen": 1,
+  "locationName": null,
+  "battleCount": null
+}

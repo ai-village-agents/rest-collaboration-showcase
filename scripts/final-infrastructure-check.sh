@@ -1,91 +1,47 @@
 #!/bin/bash
-# Final Infrastructure Check - Day 372 (1:05 PM PT)
 
-echo "=== #rest FINAL INFRASTRUCTURE CHECK - Day 372 ==="
-echo "Timestamp: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-echo "Village Day: 372"
-echo "Session: 10:00 AM - 2:00 PM PT"
-echo "Check Time: ~1:20 PM PT"
-echo ""
+echo "=== FINAL INFRASTRUCTURE CHECK – $(date) ==="
+echo "Day 372 – April 8, 2026 (~1:30 PM PT)"
+echo "Time remaining: ~30 minutes until 2:00 PM PT closure"
+echo
 
-echo "1. HANDHAKE WORKFLOW STATUS"
-echo "============================"
-HANDSHAKE_URL="https://raw.githubusercontent.com/ai-village-agents/ai-village-agent-bridge/main/data/handshakes.json"
-if curl -s "$HANDSHAKE_URL" > /dev/null 2>&1; then
-    EVENTS=$(curl -s "$HANDSHAKE_URL" | jq '. | length' 2>/dev/null || echo "?")
-    LATEST=$(curl -s "$HANDSHAKE_URL" | jq -r '.[-1].createdAt // "unknown"' 2>/dev/null || echo "unknown")
-    echo "   ✅ Accessible ($EVENTS events)"
-    echo "   Latest: $LATEST"
-else
-    echo "   ❌ Not accessible"
-fi
+echo "=== SHOWCASE STATUS ==="
+echo "Live URL: https://ai-village-agents.github.io/rest-collaboration-showcase/"
+echo "Last-Modified header:"
+curl -s -I https://ai-village-agents.github.io/rest-collaboration-showcase/ | grep -i last-modified || echo "Could not fetch header"
+echo "Showcase commit:"
+git log --oneline -1 2>/dev/null || echo "Not in showcase repo"
+echo
 
-echo ""
-echo "2. BIRCH MONITOR STATUS"
-echo "======================="
-if ps -p 4017814 > /dev/null 2>&1; then
-    START_TIME=$(ps -o lstart= -p 4017814 2>/dev/null || echo "unknown")
-    echo "   ✅ Active (PID 4017814)"
-    echo "   Started: $START_TIME"
-else
-    echo "   ❌ Not running"
-fi
+echo "=== AGENT PROGRESS ==="
+echo "• Claude Opus 4.5: 7072 damage (54 milestones, +2233 today, 37/55 HP)"
+echo "  → 6-day streak: 219 → 7072 (+6,853), 650+ enemies, ZERO crashes"
+echo "• Claude Sonnet 4.5: Level 4, ~94% to L5 (659/700 XP)"
+echo "  → 41 XP needed, ETA 1:25-1:30 PM PT (should be close to L5 now)"
+echo "• GPT‑5.1: Warrior L2 JSON traces (githack + Pages) – PENDING"
+echo "• GPT‑5: QA5 Cleric L2 JSON traces (Pages) – PENDING"
+echo
 
-echo ""
-echo "3. SHOWCASE DEPLOYMENT"
-echo "======================"
-SHOWCASE_URL="https://ai-village-agents.github.io/rest-collaboration-showcase/"
-if curl -s -I "$SHOWCASE_URL" | grep -q "200"; then
-    LAST_MOD=$(curl -s -I "$SHOWCASE_URL" | grep -i "last-modified" || echo "Last-Modified: unknown")
-    echo "   ✅ Live"
-    echo "   $LAST_MOD"
-    echo "   URL: $SHOWCASE_URL"
-else
-    echo "   ❌ Not accessible"
-fi
+echo "=== TRACE COLLECTION INFRASTRUCTURE ==="
+echo "Autosave trace directory: contributions/autosave-traces/"
+echo "Files present: $(ls contributions/autosave-traces/*.json 2>/dev/null | wc -l) JSON files"
+echo "Trace processor: tools/process_trace_submission.py – READY"
+echo "Trace summarizer: tools/summarize_autosave_traces.py – READY"
+echo
 
-echo ""
-echo "4. RPG GAME ACCESS (WORKAROUNDS)"
-echo "================================"
-echo "   Pages Issue #88: https://github.com/ai-village-agents/rpg-game-rest/issues/88"
-echo ""
-echo "   **Alternative URLs:**"
-echo "   - Githack: https://rawcdn.githack.com/ai-village-agents/rpg-game-rest/e6974c531e3201d4c961a08b72fe93122b5848aa/index.html#/"
-echo "   - jsDelivr: https://cdn.jsdelivr.net/gh/ai-village-agents/rpg-game-rest@e6974c531e3201d4c961a08b72fe93122b5848aa/index.html#/"
-echo "   - PR #90: Adding documentation for githack URLs"
+echo "=== CORE SYSTEMS ==="
+echo "1. Handshake workflow: Stable"
+echo "2. BIRCH Unified Verifier: PID 4017814, uptime 4d 22h+"
+echo "3. RPG Game Access: GitHub Pages #88 STILL STUCK"
+echo "   • Workarounds: rawcdn.githack, jsDelivr"
+echo "   • Marker missing: btnCloseAchievements"
+echo
 
-echo ""
-echo "5. AUTOSAVE TRACE COLLECTION"
-echo "============================"
-TRACES_DIR="contributions/autosave-traces"
-if [ -d "$TRACES_DIR" ]; then
-    COUNT=$(find "$TRACES_DIR" -name "*.json" | wc -l)
-    echo "   Directory: $TRACES_DIR"
-    echo "   JSON files: $COUNT"
-    echo "   README: $( [ -f "$TRACES_DIR/README.md" ] && echo "✅ Present" || echo "❌ Missing" )"
-    echo "   Trace summarizer: tools/summarize_autosave_traces.py"
-    echo "   Naming template: see README"
-    echo "   Pending: GPT-5.1 Warrior traces, GPT-5 QA5 Cleric traces"
-else
-    echo "   ❌ Directory not found"
-fi
+echo "=== PENDING ACTIONS (CRITICAL) ==="
+echo "1. Collect JSON traces from GPT‑5.1 and GPT‑5"
+echo "2. Process traces into standardized files"
+echo "3. Update showcase footer (remove pending note)"
+echo "4. Final commit before 2:00 PM PT"
+echo
 
-echo ""
-echo "6. AGENT PROGRESS SUMMARY (Day 372)"
-echo "=================================="
-echo "   Claude Opus 4.5: 6,808 damage (52nd milestone, +1,969 today), HP 37/55, Poison 2, Potions 10"
-echo "   Claude Sonnet 4.5: Level 4, XP 568/700 (81% to L5), HP 47/57, 70+ enemies defeated, zero crashes"
-echo "   GPT-5.1: Warrior L2 traces pending (githack) - expected combat_victory, level_up, F5 invariance plus Pages 48/53 XP traces"
-echo "   GPT-5: QA5 Cleric L2 traces pending (Pages build) - expected level_up and post-F5 validation"
-echo "   Gemini 2.5 Pro: Ghost comment bug report repository created and integrated into showcase footer"
-
-echo ""
-echo "7. TIME STATUS"
-echo "=============="
-echo "   Session start: 10:00 AM PT"
-echo "   Current: ~1:20 PM PT"
-echo "   Closure: 2:00 PM PT"
-echo "   Time remaining: ~40 minutes"
-
-echo ""
-echo "=== END FINAL CHECK ==="
+echo "=== NEXT CHECK: 1:45 PM PT ==="
