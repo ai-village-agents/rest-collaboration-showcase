@@ -68,41 +68,107 @@ def _isoish(x: Any) -> Optional[str]:
     return None
 
 
-def parse_trace(path: str) -> Row:
-    with open(path, "r", encoding="utf-8") as f:
-        obj = json.load(f)
-
-    wrapper, save = _dig_save(obj if isinstance(obj, dict) else {})
-
-    player = save.get("player") if isinstance(save, dict) else None
+def _row_from_save_like(filename: str, wrapper: dict, save_like: dict) -> Row:
+    player = save_like.get("player") if isinstance(save_like, dict) else None
     if not isinstance(player, dict):
         player = {}
 
-    pending = save.get("pendingLevelUps")
+    pending = save_like.get("pendingLevelUps")
     pending_len = None
     if isinstance(pending, list):
         pending_len = len(pending)
 
+    # Some trace formats store level/xp at top-level
+    lvl = _get_int(player.get("level"))
+    xp = _get_int(player.get("xp"))
+    if lvl is None:
+        lvl = _get_int(save_like.get("level"))
+    if xp is None:
+        xp = _get_int(save_like.get("xp"))
+
+    phase = save_like.get("phase") if isinstance(save_like.get("phase"), str) else None
+    reason = (
+        save_like.get("autoSaveReason")
+        if isinstance(save_like.get("autoSaveReason"), str)
+        else None
+    )
+    saved_at = _isoish(save_like.get("savedAt"))
+
+    # Alternate field names used in some trace records
+    event = wrapper.get("event") if wrapper else None
+    save_key = wrapper.get("saveKey") if wrapper else None
+    if not save_key and isinstance(save_like.get("slotKey"), str):
+        save_key = save_like.get("slotKey")
+
+    # Timestamp field used in list-of-records traces
+    if not saved_at and isinstance(save_like.get("timestamp"), str):
+        saved_at = save_like.get("timestamp")
+
     return Row(
-        filename=os.path.basename(path),
+        filename=filename,
         agent=(wrapper.get("agent") if wrapper else None),
         build=(wrapper.get("build") if wrapper else None),
-        event=(wrapper.get("event") if wrapper else None),
-        save_key=(wrapper.get("saveKey") if wrapper else None),
-        level=_get_int(player.get("level")),
-        xp=_get_int(player.get("xp")),
-        phase=(save.get("phase") if isinstance(save.get("phase"), str) else None),
-        auto_save_reason=(
-            save.get("autoSaveReason")
-            if isinstance(save.get("autoSaveReason"), str)
-            else None
+        event=event,
+        save_key=save_key,
+        level=lvl,
+        xp=xp,
+        phase=phase,
+        auto_save_reason=reason,
+        pending_levelups=(
+            pending_len
+            if pending_len is not None
+            else (_get_int(save_like.get("pendingLevelUpsLen")))
         ),
-        pending_levelups=pending_len,
-        saved_at=_isoish(save.get("savedAt")),
+        saved_at=saved_at,
     )
 
 
+def parse_traces(path: str) -> list[Row]:
+    with open(path, "r", encoding="utf-8") as f:
+        obj = json.load(f)
+
+    filename = os.path.basename(path)
+
+    # Case 1: wrapper with `save`
+    if isinstance(obj, dict) and isinstance(obj.get("save"), dict):
+        wrapper, save = obj, obj["save"]
+        return [_row_from_save_like(filename, wrapper, save)]
+
+    # Case 2: Sonnet-style wrapper with `traces: [...]`
+    if isinstance(obj, dict) and isinstance(obj.get("traces"), list):
+        wrapper = {"agent": obj.get("agent")}
+        rows: list[Row] = []
+        for rec in obj["traces"]:
+            if isinstance(rec, dict):
+                # include tag as event if present
+                w = dict(wrapper)
+                if isinstance(rec.get("tag"), str):
+                    w["event"] = rec.get("tag")
+                rows.append(_row_from_save_like(filename, w, rec))
+        return rows or [_row_from_save_like(filename, wrapper, {})]
+
+    # Case 3: list-of-records format
+    if isinstance(obj, list):
+        rows: list[Row] = []
+        for rec in obj:
+            if isinstance(rec, dict):
+                w = {}
+                if isinstance(rec.get("contributor"), str):
+                    w["agent"] = rec.get("contributor")
+                if isinstance(rec.get("tag"), str):
+                    w["event"] = rec.get("tag")
+                rows.append(_row_from_save_like(filename, w, rec))
+        return rows
+
+    # Case 4: raw save object
+    if isinstance(obj, dict):
+        return [_row_from_save_like(filename, {}, obj)]
+
+    return [_row_from_save_like(filename, {}, {})]
+
+
 def as_md(rows: list[Row]) -> str:
+(rows: list[Row]) -> str:
     lines = []
     lines.append(f"Generated: {datetime.utcnow().isoformat(timespec='seconds')}Z")
     lines.append("")
@@ -146,7 +212,7 @@ def main() -> int:
     rows = []
     for p in paths:
         try:
-            rows.append(parse_trace(p))
+            rows.extend(parse_traces(p))
         except Exception as e:
             rows.append(
                 Row(
@@ -158,7 +224,7 @@ def main() -> int:
                     level=None,
                     xp=None,
                     phase=None,
-                    auto_save_reason=f"ERROR: {type(e).__name__}",
+                    auto_save_reason=f"ERROR: {type(e).__name__}: {e}",
                     pending_levelups=None,
                     saved_at=None,
                 )
