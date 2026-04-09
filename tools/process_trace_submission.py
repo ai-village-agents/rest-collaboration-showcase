@@ -13,6 +13,7 @@ import json
 import os
 import sys
 import re
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -58,12 +59,40 @@ def process_entry(entry, output_dir, index, total):
     
     # Ensure directory exists
     os.makedirs(output_dir, exist_ok=True)
+
+    if os.path.exists(output_path):
+        print(f"Warning: {filename} already exists, skipping.")
+        return output_path, filename, False
     
     # Write JSON with indentation
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(entry, f, indent=2)
     
-    return output_path, filename
+    return output_path, filename, True
+
+
+def acquire_lock(lock_path: Path, timeout: int = 10) -> bool:
+    print("Acquiring lock...")
+    start = time.time()
+    while True:
+        try:
+            fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            with os.fdopen(fd, 'w') as f:
+                f.write(f"PID: {os.getpid()}\nTimestamp: {datetime.now().isoformat()}\n")
+            print(f"Lock acquired (PID {os.getpid()})")
+            return True
+        except FileExistsError:
+            if time.time() - start >= timeout:
+                return False
+            time.sleep(1)
+
+
+def release_lock(lock_path: Path):
+    print("Releasing lock...")
+    try:
+        os.remove(lock_path)
+    except FileNotFoundError:
+        pass
 
 def main():
     parser = argparse.ArgumentParser(description='Process JSON trace submissions')
@@ -72,42 +101,64 @@ def main():
                        help='Output directory')
     parser.add_argument('--dry-run', action='store_true', 
                        help='Show what would be created without writing')
+    parser.add_argument('--skip-lock', action='store_true',
+                       help='Skip the lock file (emergency use only)')
     args = parser.parse_args()
     
+    lock_path = Path(__file__).parent / '.trace_processing_lock'
+    lock_acquired = False
+    
     try:
-        data = parse_input(args.input)
-    except Exception as e:
-        print(f"Error parsing input: {e}")
-        sys.exit(1)
-    
-    # Ensure data is a list
-    if not isinstance(data, list):
-        data = [data]
-    
-    print(f"Processing {len(data)} trace entries...")
-    
-    results = []
-    for i, entry in enumerate(data, 1):
-        if args.dry_run:
-            filename = generate_filename(entry, i, len(data))
-            print(f"[{i}/{len(data)}] Would create: {filename}")
-            print(f"  Agent: {entry.get('agent') or entry.get('contributor')}")
-            print(f"  Build: {entry.get('build')}")
-            print(f"  Event: {entry.get('event') or entry.get('tag')}")
-            print()
-        else:
-            output_path, filename = process_entry(entry, args.dest, i, len(data))
-            results.append((filename, output_path))
-    
-    if not args.dry_run and results:
-        print(f"\nCreated {len(results)} files in {args.dest}:")
-        for filename, path in results:
-            print(f"  • {filename}")
+        if not args.dry_run and not args.skip_lock:
+            lock_acquired = acquire_lock(lock_path)
+            if not lock_acquired:
+                print("Failed to acquire lock within 10 seconds.", file=sys.stderr)
+                return 1
         
-        # Update README with new files
-        readme_path = os.path.join(args.dest, 'README.md')
-        if os.path.exists(readme_path):
-            print(f"\nNote: Update {readme_path} manually with new file entries.")
+        try:
+            data = parse_input(args.input)
+        except Exception as e:
+            print(f"Error parsing input: {e}")
+            return 1
+        
+        # Ensure data is a list
+        if not isinstance(data, list):
+            data = [data]
+        
+        print(f"Processing {len(data)} trace entries...")
+        
+        results = []
+        skipped_duplicates = 0
+        for i, entry in enumerate(data, 1):
+            if args.dry_run:
+                filename = generate_filename(entry, i, len(data))
+                print(f"[{i}/{len(data)}] Would create: {filename}")
+                print(f"  Agent: {entry.get('agent') or entry.get('contributor')}")
+                print(f"  Build: {entry.get('build')}")
+                print(f"  Event: {entry.get('event') or entry.get('tag')}")
+                print()
+            else:
+                output_path, filename, created = process_entry(entry, args.dest, i, len(data))
+                if created:
+                    results.append((filename, output_path))
+                else:
+                    skipped_duplicates += 1
+        
+        if not args.dry_run and results:
+            print(f"\nCreated {len(results)} files in {args.dest}:")
+            for filename, path in results:
+                print(f"  • {filename}")
+            
+            # Update README with new files
+            readme_path = os.path.join(args.dest, 'README.md')
+            if os.path.exists(readme_path):
+                print(f"\nNote: Update {readme_path} manually with new file entries.")
+        
+        if skipped_duplicates:
+            print(f"Skipped {skipped_duplicates} duplicate file(s).")
+    finally:
+        if lock_acquired:
+            release_lock(lock_path)
     
     return 0
 

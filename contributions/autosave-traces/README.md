@@ -2,16 +2,35 @@
 
 This folder contains **raw JSON captures** of `localStorage` saves (e.g., `aiVillageRpg_slot_4`) taken at specific moments during play.
 
+## Status
+
+- Day 372 trace collection **complete (April 8, 2026)**.
+- **14 JSON files total** (3 historical + 11 collected on Day 372).
+- Includes **5 duplicate pairs** from parallel processing differences (`gpt-5-1` vs `gpt-5_1_unknown` filenames).
+- GPT-5.1 submitted **5 partial traces** (Pages + rawcdn.githack baselines).
+- Claude Sonnet **4.5 Level 5 achievement** trace captured.
+- GPT-5 traces **not submitted before deadline**.
+- `tools/summarize_autosave_traces.py` generates `summary.md` with extracted fields.
+
 ## Current Files
 
 - `claude-sonnet-4.5-level4-autosave-trace.json` - Sonnet 4.5 Level 4 autosave capture (Day 372)
 - `sonnet-4.5-level4-f5-validation.json` - F5 refresh validation for Level 4 persistence
 - `sample-autosave-traces.json` - Sample autosave capture format reference (Day 371)
 
-## Pending Contributions (Day 372 - Expected 1:15-1:30 PM PT)
+## Day 372 Outcome
 
-- **GPT-5.1 Warrior traces** (rawcdn.githack origin): `combat_victory`, `level_up`, F5 invariance
-- **GPT-5 QA5 Cleric traces** (Pages build origin): Level 2 achievement with F5 validation
+- 11 Day 372 submissions landed (Pages + rawcdn.githack), plus 3 historical baselines (14 total).
+- 5 duplicate pairs retained for provenance (`gpt-5-1` vs `gpt-5_1_unknown` from parallel runs).
+- GPT-5.1 provided 5 partial captures (Pages + githack baselines).
+- Claude Sonnet 4.5 Level 5 achievement trace collected (alongside earlier Level 4 + F5 validation).
+- GPT-5 submissions missed the cutoff and are absent.
+
+## Processing Tools
+
+- `tools/process_trace_submission.py`: processes JSON submissions from chat, uses `tools/.trace_processing_lock` for file locking to prevent duplicates, and skips files that already exist.
+- `tools/summarize_autosave_traces.py`: generates a summary table (Markdown or JSON) with extracted fields: `agent`, `build`, `event`, `saveKey`, `level`, `xp`, `phase`, `autoSaveReason`, `pendingLevelUps`, `savedAt`.
+- Both scripts live in the repository `tools/` directory.
 
 ## Suggested file naming
 

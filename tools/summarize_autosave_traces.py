@@ -2,18 +2,22 @@
 """Summarize autosave trace JSON files under contributions/autosave-traces/.
 
 Purpose
-- When multiple agents drop raw JSON traces, this script produces a quick, human-readable
-  summary (Markdown) so maintainers can sanity-check that traces are present and coherent.
+- Quickly review autosave traces dropped by multiple agents.
+- Handles both single objects and arrays of trace objects (first element used).
+- Produces either Markdown (table) or JSON output and can write to a file or stdout.
+
+Expected field mapping
+- contributor -> agent
+- tag -> event
+- slotKey -> saveKey
+- build defaults to "unknown" when absent.
+- savedAt is preferred; timestamp is the fallback.
 
 Usage
   python3 tools/summarize_autosave_traces.py \
     --dir contributions/autosave-traces \
-    --format md
-
-Notes
-- Accepts either:
-  (a) the save object itself (with keys like player/phase/autoSaveReason/savedAt), or
-  (b) a wrapper object with a top-level `save` field containing the save.
+    --format md \
+    --output contributions/autosave-traces/summary.md
 """
 
 from __future__ import annotations
@@ -24,7 +28,7 @@ import os
 from dataclasses import dataclass
 from datetime import datetime
 from glob import glob
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 
 @dataclass
@@ -41,70 +45,142 @@ class Row:
     pending_levelups: Optional[int]
     saved_at: Optional[str]
 
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "file": self.filename,
+            "agent": self.agent,
+            "build": self.build,
+            "event": self.event,
+            "saveKey": self.save_key,
+            "level": self.level,
+            "xp": self.xp,
+            "phase": self.phase,
+            "autoSaveReason": self.auto_save_reason,
+            "pendingLevelUps": self.pending_levelups,
+            "savedAt": self.saved_at,
+        }
 
-def _dig_save(obj: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
-    """Return (wrapper, save). If no wrapper, wrapper=={} and save==obj."""
-    if isinstance(obj, dict) and isinstance(obj.get("save"), dict):
-        return obj, obj["save"]
-    return {}, obj
+
+def _first_record(data: Any) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    """Return (metadata, trace_record) where metadata can live on the wrapper object.
+
+    Supported layouts:
+    - Direct trace object
+    - Array of trace objects (first element used)
+    - Wrapper with `traces` array (first element used)
+    """
+    if isinstance(data, list):
+        record = data[0] if data else {}
+        return {}, record if isinstance(record, dict) else {}
+
+    if isinstance(data, dict):
+        if isinstance(data.get("traces"), list):
+            record = data["traces"][0] if data["traces"] else {}
+            return data, record if isinstance(record, dict) else {}
+        if isinstance(data.get("save"), dict):
+            # Legacy wrapper used by some scripts.
+            return data, data["save"]  # type: ignore[return-value]
+        return data, data
+
+    return {}, {}
 
 
-def _get_int(x: Any) -> Optional[int]:
+def _as_int(value: Any) -> Optional[int]:
+    if value is None or isinstance(value, bool):
+        return None
     try:
-        if x is None:
-            return None
-        if isinstance(x, bool):
-            return None
-        return int(x)
+        return int(value)
     except Exception:
         return None
 
 
-def _isoish(x: Any) -> Optional[str]:
-    if not x:
+def _as_str(value: Any) -> Optional[str]:
+    if value is None:
         return None
-    if isinstance(x, str):
-        return x
+    if isinstance(value, str):
+        return value
+    try:
+        return str(value)
+    except Exception:
+        return None
+
+
+def _pending_len(record: Dict[str, Any]) -> Optional[int]:
+    if "pendingLevelUpsLen" in record:
+        candidate = _as_int(record.get("pendingLevelUpsLen"))
+        if candidate is not None:
+            return candidate
+    pending = record.get("pendingLevelUps")
+    if isinstance(pending, list):
+        return len(pending)
+    return None
+
+
+def _choose_str(*options: Any) -> Optional[str]:
+    for val in options:
+        candidate = _as_str(val)
+        if candidate:
+            return candidate
     return None
 
 
 def parse_trace(path: str) -> Row:
     with open(path, "r", encoding="utf-8") as f:
-        obj = json.load(f)
+        data = json.load(f)
 
-    wrapper, save = _dig_save(obj if isinstance(obj, dict) else {})
+    metadata, record = _first_record(data)
+    if not isinstance(record, dict):
+        record = {}
 
-    player = save.get("player") if isinstance(save, dict) else None
-    if not isinstance(player, dict):
-        player = {}
-
-    pending = save.get("pendingLevelUps")
-    pending_len = None
-    if isinstance(pending, list):
-        pending_len = len(pending)
+    agent = _choose_str(
+        record.get("agent"),
+        metadata.get("agent"),
+        record.get("contributor"),
+        metadata.get("contributor"),
+    )
+    build = _choose_str(record.get("build"), metadata.get("build")) or "unknown"
+    event = _choose_str(
+        record.get("event"),
+        record.get("tag"),
+        metadata.get("event"),
+        metadata.get("tag"),
+    )
+    save_key = _choose_str(
+        record.get("saveKey"),
+        record.get("slotKey"),
+        metadata.get("saveKey"),
+        metadata.get("slotKey"),
+    )
 
     return Row(
         filename=os.path.basename(path),
-        agent=(wrapper.get("agent") if wrapper else None),
-        build=(wrapper.get("build") if wrapper else None),
-        event=(wrapper.get("event") if wrapper else None),
-        save_key=(wrapper.get("saveKey") if wrapper else None),
-        level=_get_int(player.get("level")),
-        xp=_get_int(player.get("xp")),
-        phase=(save.get("phase") if isinstance(save.get("phase"), str) else None),
-        auto_save_reason=(
-            save.get("autoSaveReason")
-            if isinstance(save.get("autoSaveReason"), str)
-            else None
+        agent=agent,
+        build=build,
+        event=event,
+        save_key=save_key,
+        level=_as_int(record.get("level")),
+        xp=_as_int(record.get("xp")),
+        phase=_choose_str(record.get("phase"), metadata.get("phase")),
+        auto_save_reason=_choose_str(
+            record.get("autoSaveReason"), metadata.get("autoSaveReason")
         ),
-        pending_levelups=pending_len,
-        saved_at=_isoish(save.get("savedAt")),
+        pending_levelups=_pending_len(record),
+        saved_at=_choose_str(
+            record.get("savedAt"),
+            record.get("timestamp"),
+            metadata.get("savedAt"),
+            metadata.get("timestamp"),
+        ),
     )
 
 
-def as_md(rows: list[Row]) -> str:
+def _generated_at() -> str:
+    return f"{datetime.utcnow().isoformat(timespec='seconds')}Z"
+
+
+def as_md(rows: List[Row]) -> str:
     lines = []
-    lines.append(f"Generated: {datetime.utcnow().isoformat(timespec='seconds')}Z")
+    lines.append(f"Generated: {_generated_at()}")
     lines.append("")
     lines.append("| file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |")
     lines.append("|---|---|---|---|---|---:|---:|---|---|---:|---|")
@@ -113,7 +189,7 @@ def as_md(rows: list[Row]) -> str:
             "| {file} | {agent} | {build} | {event} | {save_key} | {lvl} | {xp} | {phase} | {reason} | {pend} | {saved_at} |".format(
                 file=r.filename,
                 agent=r.agent or "",
-                build=r.build or "",
+                build=r.build or "unknown",
                 event=r.event or "",
                 save_key=r.save_key or "",
                 lvl="" if r.level is None else r.level,
@@ -127,8 +203,18 @@ def as_md(rows: list[Row]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def as_json(rows: List[Row]) -> str:
+    payload = {
+        "generated_at": _generated_at(),
+        "rows": [r.to_dict() for r in rows],
+    }
+    return json.dumps(payload, indent=2)
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(
+        description="Summarize autosave trace JSON files into Markdown or JSON."
+    )
     ap.add_argument(
         "--dir",
         default="contributions/autosave-traces",
@@ -139,6 +225,10 @@ def main() -> int:
         default="md",
         choices=["md", "json"],
         help="Output format",
+    )
+    ap.add_argument(
+        "--output",
+        help="Optional output file; defaults to stdout when omitted",
     )
     args = ap.parse_args()
 
@@ -152,22 +242,25 @@ def main() -> int:
                 Row(
                     filename=os.path.basename(p),
                     agent=None,
-                    build=None,
+                    build="unknown",
                     event=None,
                     save_key=None,
                     level=None,
                     xp=None,
                     phase=None,
-                    auto_save_reason=f"ERROR: {type(e).__name__}",
+                    auto_save_reason=f"ERROR: {type(e).__name__}: {e}",
                     pending_levelups=None,
                     saved_at=None,
                 )
             )
 
-    if args.format == "json":
-        print(json.dumps([r.__dict__ for r in rows], indent=2))
+    rendered = as_json(rows) if args.format == "json" else as_md(rows)
+
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as f:
+            f.write(rendered)
     else:
-        print(as_md(rows))
+        print(rendered, end="")
 
     return 0
 

@@ -1,14 +1,18 @@
-Generated: 2026-04-08T20:33:50Z
+Generated: 2026-04-09T17:13:51Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
 |---|---|---|---|---|---:|---:|---|---|---:|---|
-| 2026-04-08_claude-sonnet-4_5_unknown_sonnet_level5_achievement.json |  |  |  |  |  |  | battle-summary | level_up |  |  |
-| 2026-04-08_gpt-5_1_unknown_githack_explore_start_room_change.json |  |  |  |  |  |  | exploration | room_change |  |  |
-| 2026-04-08_gpt-5_1_unknown_githack_warrior_village_start_tutorial_dismiss.json |  |  |  |  |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
-| 2026-04-08_gpt-5_1_unknown_pages_warrior_battle_summary_53xp_combat_victory.json |  |  |  |  |  |  | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
-| 2026-04-08_gpt-5_1_unknown_pages_warrior_crafting_48xp_tutorial_dismiss.json |  |  |  |  |  |  | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
-| 2026-04-08_gpt-5_1_unknown_pages_warrior_title_53xp_combat_victory_anchor.json |  |  |  |  |  |  | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
-| claude-sonnet-4.5-level4-autosave-trace.json |  |  |  |  |  |  |  |  |  |  |
-| sample-autosave-traces.json |  |  |  |  |  |  |  |  |  |  |
-| sonnet-4.5-level4-f5-validation.json |  |  |  |  |  |  |  |  |  |  |
-
+| 2026-04-08_claude-sonnet-4_5_unknown_sonnet_level5_achievement.json | claude-sonnet-4.5 | unknown | sonnet_level5_achievement | aiVillageRpg_slot_4 | 5 | 702 | battle-summary | level_up | 1 | 2026-04-08T20:30:53.414Z |
+| 2026-04-08_gpt-5-1_githack_explore_start_room_change.json | gpt-5-1 | unknown | githack_explore_start_room_change | aiVillageRpg_slot_4 | 1 | 0 | exploration | room_change |  | 2026-04-08T19:47:48.537Z |
+| 2026-04-08_gpt-5-1_githack_warrior_village_start_tutorial_dismiss.json | gpt-5-1 | unknown | githack_warrior_village_start_tutorial_dismiss | aiVillageRpg_slot_4 |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
+| 2026-04-08_gpt-5-1_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5-1 | unknown | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-08_gpt-5-1_pages_warrior_crafting_48xp_tutorial_dismiss.json | gpt-5-1 | unknown | pages_warrior_crafting_48xp_tutorial_dismiss | aiVillageRpg_slot_4 | 1 | 48 | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
+| 2026-04-08_gpt-5-1_pages_warrior_title_53xp_combat_victory_anchor.json | gpt-5-1 | unknown | pages_warrior_title_53xp_combat_victory_anchor | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-08_gpt-5_1_unknown_githack_explore_start_room_change.json | gpt-5.1 | unknown | githack_explore_start_room_change | aiVillageRpg_slot_4 | 1 | 0 | exploration | room_change |  | 2026-04-08T19:47:48.537Z |
+| 2026-04-08_gpt-5_1_unknown_githack_warrior_village_start_tutorial_dismiss.json | gpt-5.1 | unknown | githack_warrior_village_start_tutorial_dismiss | aiVillageRpg_slot_4 |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
+| 2026-04-08_gpt-5_1_unknown_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5.1 | unknown | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-08_gpt-5_1_unknown_pages_warrior_crafting_48xp_tutorial_dismiss.json | gpt-5.1 | unknown | pages_warrior_crafting_48xp_tutorial_dismiss | aiVillageRpg_slot_4 | 1 | 48 | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
+| 2026-04-08_gpt-5_1_unknown_pages_warrior_title_53xp_combat_victory_anchor.json | gpt-5.1 | unknown | pages_warrior_title_53xp_combat_victory_anchor | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| claude-sonnet-4.5-level4-autosave-trace.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
+| sample-autosave-traces.json |  | unknown | post_victory_1 | aiVillageRpg_slot_4 | 3 | 309 | exploration | victory | 1 | 2026-04-08T17:35:12.123Z |
+| sonnet-4.5-level4-f5-validation.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
