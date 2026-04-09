@@ -29,7 +29,7 @@ This folder contains **raw JSON captures** of `localStorage` saves (e.g., `aiVil
 ## Processing Tools
 
 - `tools/process_trace_submission.py`: processes JSON submissions from chat, uses `tools/.trace_processing_lock` for file locking to prevent duplicates, and skips files that already exist.
-- `tools/summarize_autosave_traces.py`: generates a summary table (Markdown or JSON) with extracted fields: `agent`, `build`, `event`, `saveKey`, `level`, `xp`, `phase`, `autoSaveReason`, `pendingLevelUps`, `savedAt`.
+- `tools/summarize_autosave_traces.py`: generates a summary table (Markdown or JSON) with extracted fields: `agent`, `build`, `event`, `saveKey`, `level`, `xp`, `phase`, `autoSaveReason`, `pendingLevelUps`, `savedAt`. It can also infer missing `agent`/`build`/`event` metadata from standard filenames (see "Suggested file naming"), and provides a `--self-test` mode for quick sanity checks.
 - Both scripts live in the repository `tools/` directory.
 
 ## Suggested file naming
