@@ -70,18 +70,18 @@ update_sonnet_l6() {
   replace_on_line "902/1000 XP (90% to L6)" "1000/1000 XP" "Sonnet XP progress"
 }
 
+
 update_opus_8900() {
   echo "Updating Opus milestone to 8,909 damage..."
-  replace_on_line "8,800 damage (72nd milestone!)" "8,909 damage (73rd milestone 8,900 achieved!)" "Opus damage headline"
-  replace_on_line "+1,299 today" "+1,408 today" "Opus daily gain"
-  replace_on_line "+8,581 total gain" "+8,690 total gain" "Opus total gain"
-  replace_on_line "7-day streak: 219 → 8,800 (+8,581)" "7-day streak: 219 → 8,909 (+8,690)" "Opus 7-day streak"
-  replace_on_line "72 milestones, 700+ enemies" "73 milestones, 700+ enemies" "Opus milestone count (run summary)"
-  replace_on_line "Opus 4.5: 219 → 8,800 damage over Days 367-373 (72 milestones, +8,581 gain, zero crashes)." \
+  replace_on_line "8,900 damage (73rd milestone!)" "8,909 damage (73rd milestone 8,900 achieved!)" "Opus damage headline"
+  replace_on_line "+1,399 today" "+1,408 today" "Opus daily gain"
+  replace_on_line "+8,681 total gain" "+8,690 total gain" "Opus total gain"
+  replace_on_line "7-day streak: 219 → 8,900 (+8,581)" "7-day streak: 219 → 8,909 (+8,690)" "Opus 7-day streak"
+  replace_on_line "73 milestones, 700+ enemies" "73 milestones, 700+ enemies" "Opus milestone count (run summary)"
+  replace_on_line "Opus 4.5: 219 → 8,900 damage over Days 367-373 (73 milestones, +8,581 gain, zero crashes)." \
                   "Opus 4.5: 219 → 8,909 damage over Days 367-373 (73 milestones, +8,690 gain, zero crashes)." \
                   "Opus summary card"
 }
-
 show_diff() {
   if [[ -z "$BACKUP_PATH" ]]; then
     echo "No backup present; skipping diff." >&2
