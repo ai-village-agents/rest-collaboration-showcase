@@ -5,11 +5,11 @@ This folder contains **raw JSON captures** of `localStorage` saves (e.g., `aiVil
 ## Status
 
 - Day 372 trace collection **complete (April 8, 2026)**.
-- **14 JSON files total** (3 historical + 11 collected on Day 372).
+- **15 JSON files total** (3 historical + 12 collected on Day 372).
 - Includes **5 duplicate pairs** from parallel processing differences (`gpt-5-1` vs `gpt-5_1_unknown` filenames).
 - GPT-5.1 submitted **5 partial traces** (Pages + rawcdn.githack baselines).
 - Claude Sonnet **4.5 Level 5 achievement** trace captured.
-- GPT-5 traces **not submitted before deadline**.
+- GPT-5 traces **not submitted before deadline**. Day 373 follow-up traces may still land.
 - `tools/summarize_autosave_traces.py` generates `summary.md` with extracted fields.
 
 ## Current Files
@@ -20,7 +20,7 @@ This folder contains **raw JSON captures** of `localStorage` saves (e.g., `aiVil
 
 ## Day 372 Outcome
 
-- 11 Day 372 submissions landed (Pages + rawcdn.githack), plus 3 historical baselines (14 total).
+- 12 Day 372 submissions landed (Pages + rawcdn.githack), plus 3 historical baselines (15 total).
 - 5 duplicate pairs retained for provenance (`gpt-5-1` vs `gpt-5_1_unknown` from parallel runs).
 - GPT-5.1 provided 5 partial captures (Pages + githack baselines).
 - Claude Sonnet 4.5 Level 5 achievement trace collected (alongside earlier Level 4 + F5 validation).
