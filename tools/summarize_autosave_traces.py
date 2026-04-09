@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from dataclasses import dataclass
 from datetime import datetime
 from glob import glob
@@ -124,6 +125,44 @@ def _choose_str(*options: Any) -> Optional[str]:
     return None
 
 
+def parse_filename_fallback(filename: str) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+    """Extract agent/build/event from filename when JSON fields are missing.
+
+    Patterns:
+    - Optional YYYY-MM-DD_ prefix
+    - Agent token before the first build token; underscores inside agent map to dots
+    - Build token is one of {"pages", "githack", "unknown"}
+    - Remaining suffix is the event (underscores preserved)
+    """
+    stem = os.path.splitext(os.path.basename(filename))[0]
+    parts = stem.split("_")
+
+    if parts and re.match(r"^\d{4}-\d{2}-\d{2}$", parts[0]):
+        parts = parts[1:]
+
+    if not parts:
+        return None, None, None
+
+    build_tokens = {"pages", "githack", "unknown"}
+    build_idx: Optional[int] = None
+    for idx, token in enumerate(parts):
+        if token in build_tokens:
+            build_idx = idx
+            break
+
+    if build_idx is None:
+        return None, None, None
+
+    agent_parts = parts[:build_idx]
+    agent = "_".join(agent_parts).replace("_", ".") if agent_parts else None
+
+    build = parts[build_idx]
+    event_parts = parts[build_idx + 1 :]
+    event = "_".join(event_parts) if event_parts else None
+
+    return agent, build, event
+
+
 def parse_trace(path: str) -> Row:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -132,19 +171,34 @@ def parse_trace(path: str) -> Row:
     if not isinstance(record, dict):
         record = {}
 
+    fallback_agent, fallback_build, fallback_event = parse_filename_fallback(
+        os.path.basename(path)
+    )
+
     agent = _choose_str(
         record.get("agent"),
         metadata.get("agent"),
         record.get("contributor"),
         metadata.get("contributor"),
     )
-    build = _choose_str(record.get("build"), metadata.get("build")) or "unknown"
+    if agent is None:
+        agent = fallback_agent
+
+    build = _choose_str(record.get("build"), metadata.get("build"))
+    if (build is None or build == "unknown") and fallback_build:
+        build = fallback_build
+    if build is None:
+        build = "unknown"
+
     event = _choose_str(
         record.get("event"),
         record.get("tag"),
         metadata.get("event"),
         metadata.get("tag"),
     )
+    if event is None:
+        event = fallback_event
+
     save_key = _choose_str(
         record.get("saveKey"),
         record.get("slotKey"),
@@ -211,6 +265,28 @@ def as_json(rows: List[Row]) -> str:
     return json.dumps(payload, indent=2)
 
 
+def _run_self_test() -> bool:
+    try:
+        agent, build, event = parse_filename_fallback(
+            "2026-04-08_gpt-5-1_githack_warrior_l1_combat_victory.json"
+        )
+        assert agent == "gpt-5-1"
+        assert build == "githack"
+        assert event == "warrior_l1_combat_victory"
+
+        agent, build, event = parse_filename_fallback(
+            "2026-04-08_claude-sonnet-4_5_unknown_sonnet_level5_achievement.json"
+        )
+        assert agent == "claude-sonnet-4.5"
+        assert build == "unknown"
+        assert event == "sonnet_level5_achievement"
+
+        assert parse_filename_fallback("agent_only_trace.json") == (None, None, None)
+    except AssertionError:
+        return False
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description="Summarize autosave trace JSON files into Markdown or JSON."
@@ -230,7 +306,15 @@ def main() -> int:
         "--output",
         help="Optional output file; defaults to stdout when omitted",
     )
+    ap.add_argument(
+        "--self-test",
+        action="store_true",
+        help="Run a small self-test of filename fallback parsing and exit",
+    )
     args = ap.parse_args()
+
+    if args.self_test:
+        return 0 if _run_self_test() else 1
 
     paths = sorted(glob(os.path.join(args.dir, "*.json")))
     rows = []

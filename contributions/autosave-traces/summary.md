@@ -1,14 +1,14 @@
-Generated: 2026-04-09T17:18:54Z
+Generated: 2026-04-09T18:14:13Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
 |---|---|---|---|---|---:|---:|---|---|---:|---|
 | 2026-04-08_claude-sonnet-4_5_unknown_sonnet_level5_achievement.json | claude-sonnet-4.5 | unknown | sonnet_level5_achievement | aiVillageRpg_slot_4 | 5 | 702 | battle-summary | level_up | 1 | 2026-04-08T20:30:53.414Z |
-| 2026-04-08_gpt-5-1_githack_explore_start_room_change.json | gpt-5-1 | unknown | githack_explore_start_room_change | aiVillageRpg_slot_4 | 1 | 0 | exploration | room_change |  | 2026-04-08T19:47:48.537Z |
-| 2026-04-08_gpt-5-1_githack_warrior_l1_combat_victory.json |  | unknown | githack_warrior_l1_combat_victory | aiVillageRpg_slot_4 | 1 | 5 | battle-summary | combat_victory |  | 2026-04-08T20:18:16.532Z |
-| 2026-04-08_gpt-5-1_githack_warrior_village_start_tutorial_dismiss.json | gpt-5-1 | unknown | githack_warrior_village_start_tutorial_dismiss | aiVillageRpg_slot_4 |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
-| 2026-04-08_gpt-5-1_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5-1 | unknown | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
-| 2026-04-08_gpt-5-1_pages_warrior_crafting_48xp_tutorial_dismiss.json | gpt-5-1 | unknown | pages_warrior_crafting_48xp_tutorial_dismiss | aiVillageRpg_slot_4 | 1 | 48 | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
-| 2026-04-08_gpt-5-1_pages_warrior_title_53xp_combat_victory_anchor.json | gpt-5-1 | unknown | pages_warrior_title_53xp_combat_victory_anchor | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-08_gpt-5-1_githack_explore_start_room_change.json | gpt-5-1 | githack | githack_explore_start_room_change | aiVillageRpg_slot_4 | 1 | 0 | exploration | room_change |  | 2026-04-08T19:47:48.537Z |
+| 2026-04-08_gpt-5-1_githack_warrior_l1_combat_victory.json | gpt-5-1 | githack | githack_warrior_l1_combat_victory | aiVillageRpg_slot_4 | 1 | 5 | battle-summary | combat_victory |  | 2026-04-08T20:18:16.532Z |
+| 2026-04-08_gpt-5-1_githack_warrior_village_start_tutorial_dismiss.json | gpt-5-1 | githack | githack_warrior_village_start_tutorial_dismiss | aiVillageRpg_slot_4 |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
+| 2026-04-08_gpt-5-1_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5-1 | pages | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-08_gpt-5-1_pages_warrior_crafting_48xp_tutorial_dismiss.json | gpt-5-1 | pages | pages_warrior_crafting_48xp_tutorial_dismiss | aiVillageRpg_slot_4 | 1 | 48 | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
+| 2026-04-08_gpt-5-1_pages_warrior_title_53xp_combat_victory_anchor.json | gpt-5-1 | pages | pages_warrior_title_53xp_combat_victory_anchor | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
 | 2026-04-08_gpt-5_1_unknown_githack_explore_start_room_change.json | gpt-5.1 | unknown | githack_explore_start_room_change | aiVillageRpg_slot_4 | 1 | 0 | exploration | room_change |  | 2026-04-08T19:47:48.537Z |
 | 2026-04-08_gpt-5_1_unknown_githack_warrior_village_start_tutorial_dismiss.json | gpt-5.1 | unknown | githack_warrior_village_start_tutorial_dismiss | aiVillageRpg_slot_4 |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
 | 2026-04-08_gpt-5_1_unknown_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5.1 | unknown | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
