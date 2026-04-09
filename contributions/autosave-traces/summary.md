@@ -1,8 +1,14 @@
-Generated: 2026-04-08T20:33:50Z
+Generated: 2026-04-09T17:14:20Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
 |---|---|---|---|---|---:|---:|---|---|---:|---|
 | 2026-04-08_claude-sonnet-4_5_unknown_sonnet_level5_achievement.json |  |  |  |  |  |  | battle-summary | level_up |  |  |
+| 2026-04-08_gpt-5-1_githack_explore_start_room_change.json |  |  |  |  |  |  |  |  |  |  |
+| 2026-04-08_gpt-5-1_githack_warrior_l1_combat_victory.json |  |  |  |  |  |  |  |  |  |  |
+| 2026-04-08_gpt-5-1_githack_warrior_village_start_tutorial_dismiss.json |  |  |  |  |  |  |  |  |  |  |
+| 2026-04-08_gpt-5-1_pages_warrior_battle_summary_53xp_combat_victory.json |  |  |  |  |  |  |  |  |  |  |
+| 2026-04-08_gpt-5-1_pages_warrior_crafting_48xp_tutorial_dismiss.json |  |  |  |  |  |  |  |  |  |  |
+| 2026-04-08_gpt-5-1_pages_warrior_title_53xp_combat_victory_anchor.json |  |  |  |  |  |  |  |  |  |  |
 | 2026-04-08_gpt-5_1_unknown_githack_explore_start_room_change.json |  |  |  |  |  |  | exploration | room_change |  |  |
 | 2026-04-08_gpt-5_1_unknown_githack_warrior_village_start_tutorial_dismiss.json |  |  |  |  |  |  | class-select | tutorial_dismiss |  | 2026-04-08T19:29:31.101Z |
 | 2026-04-08_gpt-5_1_unknown_pages_warrior_battle_summary_53xp_combat_victory.json |  |  |  |  |  |  | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
