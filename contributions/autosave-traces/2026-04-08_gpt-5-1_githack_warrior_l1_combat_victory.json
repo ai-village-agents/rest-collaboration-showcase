@@ -1,0 +1,14 @@
+[
+  {
+    "tag": "githack_warrior_l1_combat_victory",
+    "slotKey": "aiVillageRpg_slot_4",
+    "timestamp": "2026-04-08T20:59:52.275Z",
+    "level": 1,
+    "xp": 5,
+    "phase": "battle-summary",
+    "autoSaveReason": "combat_victory",
+    "pendingLevelUpsLen": null,
+    "battleCount": null,
+    "savedAt": "2026-04-08T20:18:16.532Z"
+  }
+]
