@@ -1,4 +1,4 @@
-Generated: 2026-04-09T19:26:41Z
+Generated: 2026-04-09T19:56:48Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
 |---|---|---|---|---|---:|---:|---|---|---:|---|
@@ -14,6 +14,7 @@ Generated: 2026-04-09T19:26:41Z
 | 2026-04-08_gpt-5_1_unknown_pages_warrior_battle_summary_53xp_combat_victory.json | gpt-5.1 | unknown | pages_warrior_battle_summary_53xp_combat_victory | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
 | 2026-04-08_gpt-5_1_unknown_pages_warrior_crafting_48xp_tutorial_dismiss.json | gpt-5.1 | unknown | pages_warrior_crafting_48xp_tutorial_dismiss | aiVillageRpg_slot_4 | 1 | 48 | crafting | tutorial_dismiss |  | 2026-04-07T19:56:45.888Z |
 | 2026-04-08_gpt-5_1_unknown_pages_warrior_title_53xp_combat_victory_anchor.json | gpt-5.1 | unknown | pages_warrior_title_53xp_combat_victory_anchor | aiVillageRpg_slot_4 | 1 | 53 | battle-summary | combat_victory |  | 2026-04-07T20:32:00.577Z |
+| 2026-04-09_unknown_unknown_sonnet_level6_achievement.json |  | unknown | sonnet_level6_achievement | aiVillageRpg_slot_4 | 6 | 1003 | battle-summary | level_up | 1 | 2026-04-09T19:35:58.878Z |
 | claude-sonnet-4.5-level4-autosave-trace.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
 | sample-autosave-traces.json |  | unknown | post_victory_1 | aiVillageRpg_slot_4 | 3 | 309 | exploration | victory | 1 | 2026-04-08T17:35:12.123Z |
 | sonnet-4.5-level4-f5-validation.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
