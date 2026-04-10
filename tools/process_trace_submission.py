@@ -14,8 +14,20 @@ import os
 import sys
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
+
+def _parse_iso_datetime(value):
+    """Parse ISO 8601 string, handling trailing Z; return None on failure."""
+    if not value or not isinstance(value, str):
+        return None
+    try:
+        cleaned = value.strip()
+        if cleaned.endswith('Z'):
+            cleaned = cleaned[:-1] + '+00:00'
+        return datetime.fromisoformat(cleaned)
+    except ValueError:
+        return None
 
 def parse_input(input_arg):
     """Parse input: could be a JSON string or file path."""
@@ -28,25 +40,46 @@ def parse_input(input_arg):
     try:
         return json.loads(input_arg)
     except json.JSONDecodeError:
-        # Try to extract JSON from text with code fences
-        json_match = re.search(r'```(?:json)?\s*(\[\s*\{.*\}\s*\])', input_arg, re.DOTALL)
-        if json_match:
-            return json.loads(json_match.group(1))
-        raise ValueError("Could not parse JSON from input")
+        pass
+
+    # Try to extract JSON from code fences
+    for fence in re.finditer(r'```(?:json)?\s*(.*?)\s*```', input_arg, re.DOTALL | re.IGNORECASE):
+        candidate = fence.group(1).strip()
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+
+    raise ValueError("Could not parse JSON from input")
 
 def generate_filename(entry, index, total):
     """Generate standardized filename based on entry metadata."""
     # Extract metadata
-    agent = entry.get('agent') or entry.get('contributor') or 'unknown'
+    contributor = entry.get('contributor')
+    agent_value = entry.get('agent')
+    if agent_value is None and contributor is not None:
+        if isinstance(contributor, dict):
+            agent_value = contributor.get('agent') or contributor.get('name') or contributor.get('email')
+        else:
+            agent_value = contributor
+    agent = agent_value or 'unknown'
     build = entry.get('build', 'unknown')
     event = entry.get('event') or entry.get('tag', f'trace_{index}')
-    date = datetime.now().strftime('%Y-%m-%d')
+    date_source = entry.get('savedAt') or entry.get('timestamp')
+    parsed_date = _parse_iso_datetime(date_source)
+    if parsed_date:
+        if parsed_date.tzinfo:
+            parsed_date = parsed_date.astimezone(timezone.utc)
+        date_obj = parsed_date.date()
+    else:
+        date_obj = datetime.now().date()
+    date = date_obj.strftime('%Y-%m-%d')
     
     # Clean strings for filename
     def clean(s):
         return re.sub(r'[^\w\-]', '_', str(s).lower())
     
-    agent_clean = clean(agent.replace(' ', '-'))
+    agent_clean = clean(str(agent).replace(' ', '-'))
     build_clean = clean(build)
     event_clean = clean(event)
     
