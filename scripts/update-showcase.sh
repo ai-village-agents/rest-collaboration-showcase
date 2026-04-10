@@ -4,14 +4,15 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: scripts/update-showcase.sh [all|sonnet|sonnet-1301|sonnet-l7|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10400]
+Usage: scripts/update-showcase.sh [all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405]
 
 Updates index.html milestones using sed with line numbers discovered via grep -n.
 Creates a timestamped backup before editing and shows a diff afterward.
-  all         Run Sonnet + opus-10108 updates (default)
+  all         Run Sonnet L7 + opus-10306 updates (default)
   sonnet      Set Sonnet milestone line to: 'Level 6 ACHIEVED! 1003/1350 XP. HP 59/69, 9-day perfect streak (Days 365-373), 115 enemies defeated, zero crashes, autosave validated.'
   sonnet-1301 Set Sonnet milestone line to: 'Level 6 Assassin: 1301/1350 XP (96.4% to L7!). HP 59/69, 9-day perfect streak (Days 365-373), 76 journal entries, zero crashes, autosave validated.'
   sonnet-l7   Set Sonnet milestone line to: 'Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-373), 76+ journal entries, zero crashes, autosave validated.'
+  gpt5-l2     Set GPT-5 line to: 'Level 2 Cleric ACHIEVED! 150/150 XP (100% to L3!). Autosave traces collected and F5 validation completed.'
   opus-9206   Update Opus to 9,206 damage (76th milestone 9,200 achieved!)
   opus-9305   Update Opus to 9,305 damage (77th milestone 9,300 achieved!)
   opus-9404   Update Opus to 9,404 damage (78th milestone 9,400 achieved!)
@@ -25,7 +26,9 @@ Creates a timestamped backup before editing and shows a diff afterward.
   opus-10108  Update Opus to 10,108 damage (85th milestone 10,100 achieved!)
   opus-10207  Update Opus to 10,207 damage (86th milestone 10,200 achieved!)
   opus-10300  Update Opus to 10,300 damage (87th milestone 10,300 achieved!)
+  opus-10306  Update Opus to 10,306 damage (87th milestone 10,300 achieved!)
   opus-10400  Update Opus to 10,400 damage (88th milestone 10,400 achieved!)
+  opus-10405  Update Opus to 10,405 damage (88th milestone 10,400 achieved!)
 EOF
 }
 
@@ -105,6 +108,11 @@ update_sonnet_1301() {
 update_sonnet_l7() {
   echo "Updating Sonnet milestone to Level 7 Assassin..."
   replace_line_containing "Level 6 Assassin" "                <div class=\"feature-desc\">Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-373), 76+ journal entries, zero crashes, autosave validated.</div>" "Sonnet active session line"
+}
+
+update_gpt5_l2() {
+  echo "Updating GPT-5 milestone to Level 2 Cleric..."
+  replace_line_containing "QA5 Cleric Level 2 grinding on Pages build, autosave trace collection and F5 validation pending." "                <div class=\"feature-desc\">Level 2 Cleric ACHIEVED! 150/150 XP (100% to L3!). Autosave traces collected and F5 validation completed.</div>" "GPT-5 active session line"
 }
 
 update_opus_to() {
@@ -192,6 +200,16 @@ update_opus_10400() {
   update_opus_to "10,400" "88" "10,400" "292" "10,181" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!)."
 }
 
+update_opus_10306() {
+  echo "Updating Opus milestone to 10,306 damage..."
+  update_opus_to "10,306" "87" "10,300" "2,805" "10,087" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!)."
+}
+
+update_opus_10405() {
+  echo "Updating Opus milestone to 10,405 damage..."
+  update_opus_to "10,405" "88" "10,400" "2,904" "10,186" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!)."
+}
+
 show_diff() {
   if [[ -z "$BACKUP_PATH" ]]; then
     echo "No backup present; skipping diff." >&2
@@ -206,7 +224,7 @@ main() {
   local target="${1:-all}"
   case "$target" in
     -h|--help) usage; exit 0 ;;
-    all|sonnet|sonnet-1301|sonnet-l7|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10400) ;;
+    all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405) ;;
     *)
       echo "Unknown target: $target" >&2
       usage
@@ -221,6 +239,7 @@ main() {
     sonnet) update_sonnet_l6 ;;
     sonnet-1301) update_sonnet_1301 ;;
     sonnet-l7) update_sonnet_l7 ;;
+    gpt5-l2) update_gpt5_l2 ;;
     opus-9206) update_opus_9206 ;;
     opus-9305) update_opus_9305 ;;
     opus-9404) update_opus_9404 ;;
@@ -234,10 +253,12 @@ main() {
     opus-10108) update_opus_10108 ;;
     opus-10207) update_opus_10207 ;;
     opus-10300) update_opus_10300 ;;
+    opus-10306) update_opus_10306 ;;
     opus-10400) update_opus_10400 ;;
+    opus-10405) update_opus_10405 ;;
     all)
-      update_sonnet_l6
-      update_opus_10108
+      update_sonnet_l7
+      update_opus_10306
       ;;
   esac
 
