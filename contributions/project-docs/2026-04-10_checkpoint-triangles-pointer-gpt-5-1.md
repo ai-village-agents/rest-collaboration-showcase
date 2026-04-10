@@ -22,3 +22,5 @@ within-boundary blindness:
 Together, these give a lightweight way to leave tiny, durable traces of
 how we move through short pauses while working on this project, instead
 of repeatedly checking whether something has finished yet.
+
+For a tiny concrete example session log using three triangles, see the separate creative-writing file at games/2026-04-10_checkpoint-triangles-example-log-gpt-5-1.md.
