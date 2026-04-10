@@ -4,7 +4,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: scripts/update-showcase.sh [all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405|opus-10500|opus-10600|opus-10700|opus-10800|opus-10900|opus-11000|opus-11100|opus-11200|opus-11300|opus-11400|opus-11500|opus-11600]
+Usage: scripts/update-showcase.sh [all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405|opus-10500|opus-10600|opus-10700|opus-10800|opus-10900|opus-11000|opus-11100|opus-11200|opus-11300|opus-11400|opus-11500|opus-11600|opus-11700|opus-11800|opus-11900|opus-12000|opus-12100|opus-12200|opus-12300|opus-12400|opus-12500|opus-12600]
 
 Updates index.html milestones using sed with line numbers discovered via grep -n.
 Creates a timestamped backup before editing and shows a diff afterward.
@@ -41,6 +41,16 @@ Creates a timestamped backup before editing and shows a diff afterward.
   opus-11400  Update Opus to 11,400 damage (98th milestone 11,400 achieved!)
   opus-11500  Update Opus to 11,500 damage (99th milestone 11,500 achieved!)
   opus-11600  Update Opus to 11,600 damage (100th milestone 11,600 achieved!)
+  opus-11700  Update Opus to 11,700 damage (101st milestone 11,700 achieved!)
+  opus-11800  Update Opus to 11,800 damage (102nd milestone 11,800 achieved!)
+  opus-11900  Update Opus to 11,900 damage (103rd milestone 11,900 achieved!)
+  opus-12000  Update Opus to 12,000 damage (104th milestone 12,000 achieved!)
+  opus-12100  Update Opus to 12,100 damage (105th milestone 12,100 achieved!)
+  opus-12200  Update Opus to 12,200 damage (106th milestone 12,200 achieved!)
+  opus-12300  Update Opus to 12,300 damage (107th milestone 12,300 achieved!)
+  opus-12400  Update Opus to 12,400 damage (108th milestone 12,400 achieved!)
+  opus-12500  Update Opus to 12,500 damage (109th milestone 12,500 achieved!)
+  opus-12600  Update Opus to 12,600 damage (110th milestone 12,600 achieved!)
 EOF
 }
 
@@ -282,6 +292,56 @@ update_opus_11600() {
   update_opus_to "11,600" "100" "11,600" "4,099" "11,381" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!)."
 }
 
+update_opus_11700() {
+  echo "Updating Opus milestone to 11,700 damage..."
+  update_opus_to "11,700" "101" "11700" "4,199" "11,481" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!)."
+}
+
+update_opus_11800() {
+  echo "Updating Opus milestone to 11,800 damage..."
+  update_opus_to "11,800" "102" "11800" "4,299" "11,581" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!)."
+}
+
+update_opus_11900() {
+  echo "Updating Opus milestone to 11,900 damage..."
+  update_opus_to "11,900" "103" "11900" "4,399" "11,681" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!)."
+}
+
+update_opus_12000() {
+  echo "Updating Opus milestone to 12,000 damage..."
+  update_opus_to "12,000" "104" "12000" "4,499" "11,781" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!)."
+}
+
+update_opus_12100() {
+  echo "Updating Opus milestone to 12,100 damage..."
+  update_opus_to "12,100" "105" "12100" "4,599" "11,881" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!)."
+}
+
+update_opus_12200() {
+  echo "Updating Opus milestone to 12,200 damage..."
+  update_opus_to "12,200" "106" "12200" "4,699" "11,981" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!) → 12,200 (106th milestone!)."
+}
+
+update_opus_12300() {
+  echo "Updating Opus milestone to 12,300 damage..."
+  update_opus_to "12,300" "107" "12300" "4,799" "12,081" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!) → 12,200 (106th milestone!) → 12,300 (107th milestone!)."
+}
+
+update_opus_12400() {
+  echo "Updating Opus milestone to 12,400 damage..."
+  update_opus_to "12,400" "108" "12400" "4,899" "12,181" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!) → 12,200 (106th milestone!) → 12,300 (107th milestone!) → 12,400 (108th milestone!)."
+}
+
+update_opus_12500() {
+  echo "Updating Opus milestone to 12,500 damage..."
+  update_opus_to "12,500" "109" "12500" "4,999" "12,281" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!) → 12,200 (106th milestone!) → 12,300 (107th milestone!) → 12,400 (108th milestone!) → 12,500 (109th milestone!)."
+}
+
+update_opus_12600() {
+  echo "Updating Opus milestone to 12,600 damage..."
+  update_opus_to "12,600" "110" "12600" "5,099" "12,381" "8,300 → 8,400 → 8,500 → 8,600 → 8,700 → 8,800 → 8,900 → 9,000 → 9,100 → 9,200 → 9,300 → 9,400 → 9,500 (79th milestone!) → 9,600 (80th milestone!) → 9,700 (81st milestone!) → 9,800 (82nd milestone!) → 9,910 (83rd milestone!) → 10,000 (84th milestone!) → 10,100 (85th milestone!) → 10,200 (86th milestone!) → 10,300 (87th milestone!) → 10,400 (88th milestone!) → 10,500 (89th milestone!) → 10,600 (90th milestone!) → 10,700 (91st milestone!) → 10,800 (92nd milestone!) → 10,900 (93rd milestone!) → 11,000 (94th milestone!) → 11,100 (95th milestone!) → 11,200 (96th milestone!) → 11,300 (97th milestone!) → 11,400 (98th milestone!) → 11,500 (99th milestone!) → 11,600 (100th milestone!) → 11,700 (101st milestone!) → 11,800 (102nd milestone!) → 11,900 (103rd milestone!) → 12,000 (104th milestone!) → 12,100 (105th milestone!) → 12,200 (106th milestone!) → 12,300 (107th milestone!) → 12,400 (108th milestone!) → 12,500 (109th milestone!) → 12,600 (110th milestone!)."
+}
+
 show_diff() {
   if [[ -z "$BACKUP_PATH" ]]; then
     echo "No backup present; skipping diff." >&2
@@ -296,7 +356,7 @@ main() {
   local target="${1:-all}"
   case "$target" in
     -h|--help) usage; exit 0 ;;
-    all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405|opus-10500|opus-10600|opus-10700|opus-10800|opus-10900|opus-11000|opus-11100|opus-11200|opus-11300|opus-11400|opus-11500|opus-11600) ;;
+    all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus-9206|opus-9305|opus-9404|opus-9503|opus-9602|opus-9701|opus-9800|opus-9910|opus-10000|opus-10100|opus-10108|opus-10207|opus-10300|opus-10306|opus-10400|opus-10405|opus-10500|opus-10600|opus-10700|opus-10800|opus-10900|opus-11000|opus-11100|opus-11200|opus-11300|opus-11400|opus-11500|opus-11600|opus-11700|opus-11800|opus-11900|opus-12000|opus-12100|opus-12200|opus-12300|opus-12400|opus-12500|opus-12600) ;;
     *)
       echo "Unknown target: $target" >&2
       usage
@@ -340,6 +400,16 @@ main() {
     opus-11400) update_opus_11400 ;;
     opus-11500) update_opus_11500 ;;
     opus-11600) update_opus_11600 ;;
+    opus-11700) update_opus_11700 ;;
+    opus-11800) update_opus_11800 ;;
+    opus-11900) update_opus_11900 ;;
+    opus-12000) update_opus_12000 ;;
+    opus-12100) update_opus_12100 ;;
+    opus-12200) update_opus_12200 ;;
+    opus-12300) update_opus_12300 ;;
+    opus-12400) update_opus_12400 ;;
+    opus-12500) update_opus_12500 ;;
+    opus-12600) update_opus_12600 ;;
     all)
       update_sonnet_l7
       update_opus_10306
