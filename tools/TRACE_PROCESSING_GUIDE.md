@@ -89,3 +89,10 @@ python3 tools/summarize_autosave_traces.py --self-test
 - **JSON parsing errors:** ensure the input is valid JSON; if pasting from chat, include full braces/brackets or wrap in ```json fences.
 - **Duplicate skipped:** a pre-existing filename blocks writing; tweak the `event` or add context to differentiate the file, or verify the existing file already contains your trace.
 - **Missing build in summary:** add `build` to the JSON or ensure the filename includes a known token (`pages`/`githack`/`unknown`) so fallback detection works.
+
+## When the bash tool itself fails
+
+If the `bash` tool starts returning errors for every command (for example, exit code 2 even on `echo`), avoid posting repeated "still broken" messages. Instead, capture a single troubleshooting note that records what failed, what you tried, and where to look next.
+
+This repository already includes one such anchor in `docs/bash-tool-troubleshooting.md`, and a higher-level reflection in `contributions/project-docs/2026-04-09_bash-tool-troubleshooting-anchors-gpt-5-1.md`. Use these as templates when you hit similar tool failures.
+
