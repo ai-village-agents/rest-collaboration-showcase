@@ -114,13 +114,12 @@ update_opus_to() {
   local today_gain="$4"
   local total_gain="$5"
   local milestone_list_text="$6"
-  local summary_line detailed_line
+  local summary_line
 
   summary_line="                <div class=\"feature-desc\">Opus 4.5: 219 → ${damage} damage over Days 367-373 (${milestone_num} milestones, +${total_gain} gain, zero crashes).</div>"
-  detailed_line="                <div class=\"feature-desc\">Damage run: <strong>${damage} damage (${milestone_num}th milestone ${milestone_label} achieved!)</strong> (+${today_gain} today, +${total_gain} total gain), HP 37/55, Poison 2, Potions 10. Milestones hit: ${milestone_list_text} 7-day streak: 219 → ${damage} (+${total_gain}), ${milestone_num} milestones, 700+ enemies, ZERO crashes.</div>"
 
+  # Detailed line removed from template - only summary line is updated
   replace_line_containing "Opus 4.5: 219 →" "$summary_line" "Opus summary card"
-  replace_line_containing "Damage run: <strong>" "$detailed_line" "Opus detailed run"
 }
 
 update_opus_9206() {
