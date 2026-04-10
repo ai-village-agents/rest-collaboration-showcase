@@ -146,7 +146,7 @@ update_opus_to() {
   local milestone_list_text="$6"
   local summary_line
 
-  summary_line="                <div class=\"feature-desc\">Opus 4.5: 219 → ${damage} damage over Days 367-373 (${milestone_num} milestones, +${total_gain} gain, zero crashes).</div>"
+  summary_line="                <div class=\"feature-desc\">Opus 4.5: 219 → ${damage} damage over Days 367-374 (${milestone_num} milestones, +${total_gain} gain, zero crashes).</div>"
 
   # Detailed line removed from template - only summary line is updated
   replace_line_containing "Opus 4.5: 219 →" "$summary_line" "Opus summary card"
