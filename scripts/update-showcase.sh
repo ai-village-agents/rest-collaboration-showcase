@@ -9,9 +9,9 @@ Usage: scripts/update-showcase.sh [all|sonnet|sonnet-1301|sonnet-l7|gpt5-l2|opus
 Updates index.html milestones using sed with line numbers discovered via grep -n.
 Creates a timestamped backup before editing and shows a diff afterward.
   all         Run Sonnet L7 + opus-10306 updates (default)
-  sonnet      Set Sonnet milestone line to: 'Level 6 ACHIEVED! 1003/1350 XP. HP 59/69, 9-day perfect streak (Days 365-373), 115 enemies defeated, zero crashes, autosave validated.'
-  sonnet-1301 Set Sonnet milestone line to: 'Level 6 Assassin: 1301/1350 XP (96.4% to L7!). HP 59/69, 9-day perfect streak (Days 365-373), 76 journal entries, zero crashes, autosave validated.'
-  sonnet-l7   Set Sonnet milestone line to: 'Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-373), 76+ journal entries, zero crashes, autosave validated.'
+  sonnet      Set Sonnet milestone line to: 'Level 6 ACHIEVED! 1003/1350 XP. HP 59/69, 9-day perfect streak (Days 365-374), 115 enemies defeated, zero crashes, autosave validated.'
+  sonnet-1301 Set Sonnet milestone line to: 'Level 6 Assassin: 1301/1350 XP (96.4% to L7!). HP 59/69, 9-day perfect streak (Days 365-374), 76 journal entries, zero crashes, autosave validated.'
+  sonnet-l7   Set Sonnet milestone line to: 'Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-374), 76+ journal entries, zero crashes, autosave validated.'
   gpt5-l2     Set GPT-5 line to: 'Level 2 Cleric ACHIEVED! 150/150 XP (100% to L3!). Autosave traces collected and F5 validation completed.'
   opus-9206   Update Opus to 9,206 damage (76th milestone 9,200 achieved!)
   opus-9305   Update Opus to 9,305 damage (77th milestone 9,300 achieved!)
@@ -119,17 +119,17 @@ replace_line_containing() {
 
 update_sonnet_l6() {
   echo "Updating Sonnet milestone to Level 6..."
-  replace_line_containing "Level 6 ACHIEVED!" "                <div class=\"feature-desc\">Level 6 ACHIEVED! 1003/1350 XP. HP 59/69, 9-day perfect streak (Days 365-373), 115 enemies defeated, zero crashes, autosave validated.</div>" "Sonnet active session line"
+  replace_line_containing "Level 6 ACHIEVED!" "                <div class=\"feature-desc\">Level 6 ACHIEVED! 1003/1350 XP. HP 59/69, 9-day perfect streak (Days 365-374), 115 enemies defeated, zero crashes, autosave validated.</div>" "Sonnet active session line"
 }
 
 update_sonnet_1301() {
   echo "Updating Sonnet milestone to Level 6 Assassin..."
-  replace_line_containing "Level 6 Assassin" "                <div class=\"feature-desc\">Level 6 Assassin: 1301/1350 XP (96.4% to L7!). HP 59/69, 9-day perfect streak (Days 365-373), 76 journal entries, zero crashes, autosave validated.</div>" "Sonnet active session line"
+  replace_line_containing "Level 6 Assassin" "                <div class=\"feature-desc\">Level 6 Assassin: 1301/1350 XP (96.4% to L7!). HP 59/69, 9-day perfect streak (Days 365-374), 76 journal entries, zero crashes, autosave validated.</div>" "Sonnet active session line"
 }
 
 update_sonnet_l7() {
   echo "Updating Sonnet milestone to Level 7 Assassin..."
-  replace_line_containing "Level 6 Assassin" "                <div class=\"feature-desc\">Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-373), 76+ journal entries, zero crashes, autosave validated.</div>" "Sonnet active session line"
+  replace_line_containing "Level 6 Assassin" "                <div class=\"feature-desc\">Level 7 Assassin ACHIEVED! 1350/1350 XP (100% to L8!). HP 59/69, 9-day perfect streak (Days 365-374), 76+ journal entries, zero crashes, autosave validated.</div>" "Sonnet active session line"
 }
 
 update_gpt5_l2() {
