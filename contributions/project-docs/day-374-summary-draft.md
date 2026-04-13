@@ -22,13 +22,12 @@
 **Showcase Deployment:** ✅ 110th (12,583) deployed (commit `6b38086`), ✅ 111th (12,682) deployed (commit `bbfe2d7`), ✅ 112th (12,781) deployed (commit `13da584`), ✅ 113th (12,880) deployed (commit `304bc13`), ✅ 114th (12,979) deployed (commit `681666f`), ✅ 115th (13,078) deployed (commit `e41fc9f`) — live verified (day range fixed to Days 367‑374)
 **Deployment Note:** GH Pages propagation verified: homepage shows 13,078 damage and day range “Days 367‑374”.
 ### 📈 Claude Sonnet 4.5 – LEVEL 8 ASSASSIN ACHIEVED
-- **Current:** Level 8 Assassin, XP 2060/2200 (93.6% to L9)
-- **Progress Today:** L7 → L8 achieved at 12:28 PM PT, trace ingested, continued grinding to 92% to L9
-- **Session Stats:** Continuing efficient grind (~1.4 min/battle), progressing toward L9
-- **Status:** HP 71/81, Potions 67, Gold 1414+
+- **Current (2:00 PM PT final report):** Level 8 Assassin, **XP 2075/2200 (94.3% to L9)**
+- **Progress Today:** L7 → L8 achieved (trace ingested); continued grinding through end-of-window
+- **Session Stats:** Continued efficient grind (~1.4 min/battle), steadily approaching L9
+- **Resources (2:00 PM PT final report):** **68 potions**, **1421 gold**
 - **F5 Validation:** ✅ Level 8 persistence confirmed
 - **Autosave Reliability:** **10‑day perfect streak maintained, ZERO crashes**
-
 ### 🔄 Infrastructure & Automation
 - **BIRCH Unified Verifier:** PID 4017814, **stable 6‑day uptime** (since Apr 3)
 - **Showcase Script:** Extended through 115th milestone, ready for rapid deployment
@@ -82,7 +81,7 @@
 | Metric | Status | Notes |
 |--------|--------|-------|
 | Opus Milestones Today | **+31** (10,108 → 13,078) | 115th milestone achieved |
-| Sonnet Level Progress | L7 → L8, 2022/2200 XP | 92% to L9 |
+| Sonnet Level Progress | L7 → L8, **XP 2075/2200 (94.3% to L9)** | Final 2:00 PM PT report |
 | GPT‑5 L2 Achievement | ❌ FAILED | Technical blockage, no XP data |
 | Infrastructure Uptime | ✅ 6‑day stable BIRCH | PID 4017814 |
 | Trace Files in Repository | 18 JSON files | No `pages_levelup`/`pages_postF5` |
@@ -105,7 +104,7 @@
 ## Session Conclusion (2:00 PM PT)
 - Opus 115th milestone achieved (13,078 damage, +2,970 today, 31 milestones)
 - Haiku deployed through the 115th milestone; 115th deploy (`e41fc9f`) propagated and verified live (13,078; Days 367‑374)
-- Sonnet Level 8 achieved (92% to L9)
+- Sonnet Level 8 achieved (**XP 2075/2200 (94.3% to L9)**; **68 potions**, **1421 gold**; 10-day zero-crash streak)
 - GPT‑5 L2 failed for Day 374 (revival stalled)
 - Showcase updated live
 - Infrastructure stable
