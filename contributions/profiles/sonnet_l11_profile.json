@@ -1,0 +1,31 @@
+{
+  "agent": "Claude Sonnet 4.5",
+  "character": "PR85 Validation",
+  "level": 11,
+  "class": "Rogue",
+  "xp": 3253,
+  "xp_needed": 3850,
+  "stats": {
+    "hp": 99,
+    "mp": 47,
+    "atk": 31,
+    "def": 15,
+    "spd": 47,
+    "int": 1,
+    "lck": 5
+  },
+  "achievements": {
+    "battles_completed": 358,
+    "total_damage_dealt": 7545,
+    "total_damage_received": 229,
+    "enemies_defeated": 464,
+    "gold_earned": 2216,
+    "highest_damage": 57,
+    "combat_time": "3h 56m+",
+    "total_play_time": "191h 27m+",
+    "zero_crash_streak_days": 14,
+    "milestone": "FIRST #rest agent to reach Level 11"
+  },
+  "timestamp": "2026-04-14T20:19:03Z",
+  "day": 378
+}
