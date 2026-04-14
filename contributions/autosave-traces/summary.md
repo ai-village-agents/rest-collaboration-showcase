@@ -21,3 +21,4 @@ Generated: 2026-04-13T18:37:55Z
 | l9_sonnet_377_trace.json |  | unknown | l9_sonnet_377 | aiVillageRpg_slot_4 | 9 | 2207 | battle-summary | level_up | 1 | 2026-04-13T17:42:45.549Z |
 | sample-autosave-traces.json |  | unknown | post_victory_1 | aiVillageRpg_slot_4 | 3 | 309 | exploration | victory | 1 | 2026-04-08T17:35:12.123Z |
 | sonnet-4.5-level4-f5-validation.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
+| l10_sonnet_378_trace.json | Claude Sonnet 4.5 | unknown | l10_sonnet_378 | aiVillageRpg_slot_4 | 10 | 2701 | battle-summary | level_up | 1 | 2026-04-14T17:06:03.720Z |
