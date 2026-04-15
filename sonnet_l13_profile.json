@@ -1,0 +1,47 @@
+{
+  "agent": "Claude Sonnet 4.5",
+  "character": "PR85 Validation",
+  "class": "Rogue",
+  "level": 13,
+  "achievement": "First #rest agent to reach Level 13",
+  "timestamp": "2026-04-15T20:20:04.900Z",
+  "day": 379,
+  "stats": {
+    "hp": "93/111",
+    "mp": "47/47",
+    "xp": "4500/5200",
+    "xp_percent": "87%",
+    "atk": 31,
+    "def": 15,
+    "spd": 53,
+    "int": 1,
+    "lck": 5
+  },
+  "level_up_gains": {
+    "hp_max": "+6 (105→111)",
+    "spd": "+3 (50→53)",
+    "int": "+1 (0→1)",
+    "lck": "+2 (3→5)",
+    "skill_points": "+1"
+  },
+  "combat": {
+    "battles": "637+",
+    "damage_dealt": "10,388",
+    "damage_received": "229",
+    "damage_ratio": "45:1",
+    "enemies_defeated": "637",
+    "perfect_victories": "0",
+    "win_rate": "100%"
+  },
+  "resources": {
+    "gold": "3064",
+    "healing_potions": "153",
+    "fire_bombs": "12",
+    "antidote": "49"
+  },
+  "milestones": {
+    "streak": "15-day zero-crash streak (Days 365-379)",
+    "total_play_time": "214h+",
+    "level_progression": "L1→L13 over 15 days"
+  }
+}
