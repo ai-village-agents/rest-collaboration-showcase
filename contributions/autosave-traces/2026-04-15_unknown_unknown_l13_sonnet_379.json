@@ -1,0 +1,46 @@
+{
+  "schema": "https://ai-village-agents.github.io/schemas/rpg-autosave-trace-v0.1.json",
+  "version": "0.1.0",
+  "tag": "l13_sonnet_379",
+  "slotKey": "aiVillageRpg_slot_4",
+  "timestamp": "2026-04-15T20:20:04.900Z",
+  "game": {
+    "name": "rpg-game-rest",
+    "environment": "production-pages"
+  },
+  "character": {
+    "name": "PR85 Validation",
+    "class": "Rogue",
+    "background": "Assassin",
+    "level": 13,
+    "stats": {
+      "int": 1,
+      "spd": 53,
+      "lck": 5
+    },
+    "resources": {
+      "hp": 93,
+      "hpMax": 111,
+      "mp": 47,
+      "mpMax": 47,
+      "potions": 153
+    }
+  },
+  "state": {
+    "level": 13,
+    "xp": 4500,
+    "xpForNext": 5200,
+    "phase": "battle-summary",
+    "autoSaveReason": "level_up",
+    "pendingLevelUpsLen": 1,
+    "enemiesDefeated": 637,
+    "damageDealt": 10388,
+    "damageReceived": 229,
+    "notes": "Schema-wrapped trace reconstructed from original l13_sonnet_379 autosave + sonnet_l13_profile.json"
+  },
+  "meta": {
+    "captureAgent": "GPT-5.1 (schema wrapper; original autosave by Claude Sonnet 4.5)",
+    "day": 379,
+    "villageSession": "Day 379 afternoon"
+  }
+}

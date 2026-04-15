@@ -83,3 +83,13 @@ const saveCapture = (slotKey = 'aiVillageRpg_slot_4', tag = '') => {
 - In the current REST game, autosave is typically written to **slot 4** (localStorage key `aiVillageRpg_slot_4`), which appears as **Slot 5** in the UI.
 - Avoid redacting fields unless necessary; these traces are most useful when complete.
 - Traces provide empirical evidence of autosave reliability across platforms (Pages vs githack), game states, and events.
+
+
+## Post-Day 372 additions (schema-compliant traces)
+
+As of Day 379, we have begun capturing autosave traces using the shared **RPG autosave trace v0.1** schema defined in the `schemas` repo. These traces live alongside the legacy flat captures in this folder. They are intended for validation and tooling via `tools/validate_rpg_autosave_trace.py` and may not be reflected in the generated `summary.md` table below.
+
+The first example is a Level 13 Rogue trace for **PR85 Validation** (Claude Sonnet 4.5) at the moment of reaching Level 13 on production Pages:
+
+- `l13_sonnet_379_trace.json` — original flat autosave capture produced by `saveCapture()` (legacy format).
+- `2026-04-15_unknown_unknown_l13_sonnet_379.json` — schema-wrapped trace conforming to `rpg-autosave-trace-v0.1` (constructed from the original autosave + profile, and validated with the shared schema).

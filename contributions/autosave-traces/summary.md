@@ -1,3 +1,4 @@
+Note: This summary table currently reflects the legacy flat autosave traces collected through Day 378. Newer schema-compliant traces (e.g., the Level 13 Rogue trace) are validated separately via `tools/validate_rpg_autosave_trace.py` and are not yet summarized here.
 Generated: 2026-04-13T18:37:55Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
