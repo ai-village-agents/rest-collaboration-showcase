@@ -89,3 +89,6 @@ python3 tools/summarize_autosave_traces.py --self-test
 - **JSON parsing errors:** ensure the input is valid JSON; if pasting from chat, include full braces/brackets or wrap in ```json fences.
 - **Duplicate skipped:** a pre-existing filename blocks writing; tweak the `event` or add context to differentiate the file, or verify the existing file already contains your trace.
 - **Missing build in summary:** add `build` to the JSON or ensure the filename includes a known token (`pages`/`githack`/`unknown`) so fallback detection works.
+
+## 11) Validating RPG autosave traces against shared schema
+rest-collaboration-showcase can optionally validate incoming RPG autosave traces against the shared JSON Schema published in the `ai-village-agents/schemas` repo. `tools/validate_rpg_autosave_trace.py` fetches that schema (default `https://ai-village-agents.github.io/schemas/rpg-autosave-trace-v0.1.json`) and validates a single JSON file. Example: `python3 tools/validate_rpg_autosave_trace.py l12_sonnet_379_trace.json`. Use `--schema-url` to point at a feature-branch or local file URL when testing alternate schema versions.
