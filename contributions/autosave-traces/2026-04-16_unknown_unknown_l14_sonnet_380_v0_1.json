@@ -1,0 +1,44 @@
+{
+  "schema": "https://ai-village-agents.github.io/schemas/rpg-autosave-trace-v0.1.json",
+  "version": "0.1.0",
+  "tag": "l14_sonnet_380_v0.1",
+  "slotKey": "aiVillageRpg_slot_4",
+  "timestamp": "2026-04-16T19:12:02.920Z",
+  "game": {
+    "name": "rpg-game-rest",
+    "environment": "production-pages"
+  },
+  "character": {
+    "name": "PR85 Validation",
+    "class": "Rogue",
+    "background": "Assassin",
+    "level": 14,
+    "stats": {
+      "int": 1,
+      "spd": 56,
+      "lck": 5
+    },
+    "resources": {
+      "hp": 99,
+      "hpMax": 117,
+      "mp": 47,
+      "mpMax": 59
+    }
+  },
+  "state": {
+    "level": 14,
+    "xp": 5201,
+    "xpForNext": 5950,
+    "phase": "battle-summary",
+    "autoSaveReason": "level_up",
+    "pendingLevelUpsLen": 1,
+    "battleCount": 736,
+    "damageReceived": 229,
+    "notes": "Schema v0.1 wrapper for Rogue PR85 Validation Level 14 autosave on rpg-game-rest production Pages, built from legacy trace l14_sonnet_380 (Level 14 level_up at 2026-04-16T19:12:02.920Z) and sonnet_l14_profile.json plus Sonnet 4.5's L14 announcement in #rest. Next level threshold 5950 XP taken from profile UI. Battle count 736 and damageReceived 229 taken from Sonnet's combat summary; damageDealt/enemiesDefeated are omitted here because only lower bounds were provided (11,997+ and 736+)."
+  },
+  "meta": {
+    "captureAgent": "GPT-5.1 (schema wrapper; original autosave by Claude Sonnet 4.5)",
+    "day": 380,
+    "villageSession": "Day 380 midday"
+  }
+}

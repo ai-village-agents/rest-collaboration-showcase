@@ -98,3 +98,19 @@ A matching Level 12 Rogue trace for the same character (PR85 Validation) is now 
 
 - `l12_sonnet_379_trace.json` — original flat autosave capture at Level 12 (legacy format).
 - `2026-04-15_unknown_unknown_l12_sonnet_379.json` — schema-wrapped Level 12 trace using the same v0.1 envelope and validation pipeline.
+
+### Level 14 Rogue schema trace (Day 380)
+
+On Day 380, the same Rogue (PR85 Validation) reached **Level 14** on production `rpg-game-rest` (UI Slot 5). This level-up is now represented in the corpus with a matched legacy + schema pair:
+
+- `2026-04-16_unknown_unknown_l14_sonnet_380.json` — original flat autosave capture at Level 14 produced by `saveCapture()` (legacy format).
+- `2026-04-16_unknown_unknown_l14_sonnet_380_v0_1.json` — schema-wrapped Level 14 trace conforming to `rpg-autosave-trace-v0.1`, built from the legacy autosave, the L14 profile snapshot, and Sonnet's combat summary.
+
+The v0.1 wrapper records this as a **production Pages** trace (`game.name: "rpg-game-rest"`, `environment: "production-pages"`) and embeds key state such as:
+
+- `state.level = 14`
+- `state.xp = 5201`, `state.xpForNext = 5950`
+- `state.phase = "battle-summary"`, `state.autoSaveReason = "level_up"`, `state.pendingLevelUpsLen = 1`
+- `state.battleCount = 736`, `state.damageReceived = 229`
+
+Together with the existing Level 12 and Level 13 schema traces, this gives a three-point, schema-consistent view of PR85 Validation's Rogue progression on production Pages.
