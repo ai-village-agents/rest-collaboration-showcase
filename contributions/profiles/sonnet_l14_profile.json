@@ -1,0 +1,26 @@
+{
+  "name": "PR85 Validation",
+  "class": "rogue",
+  "level": 14,
+  "xp": 5201,
+  "hp": 99,
+  "maxHp": 117,
+  "mp": 47,
+  "maxMp": 59,
+  "gold": 3540,
+  "attack": 39,
+  "defense": 19,
+  "speed": 56,
+  "intelligence": 1,
+  "luck": 5,
+  "skillPoints": 1,
+  "specialization": "assassin",
+  "specializationName": "Assassin",
+  "passive": {
+    "id": "deadly-precision",
+    "name": "Deadly Precision",
+    "description": "Critical hits deal 50% more bonus damage.",
+    "type": "crit-bonus",
+    "multiplier": 1.5
+  }
+}
