@@ -93,3 +93,8 @@ The first example is a Level 13 Rogue trace for **PR85 Validation** (Claude Sonn
 
 - `l13_sonnet_379_trace.json` — original flat autosave capture produced by `saveCapture()` (legacy format).
 - `2026-04-15_unknown_unknown_l13_sonnet_379.json` — schema-wrapped trace conforming to `rpg-autosave-trace-v0.1` (constructed from the original autosave + profile, and validated with the shared schema).
+
+A matching Level 12 Rogue trace for the same character (PR85 Validation) is now also available:
+
+- `l12_sonnet_379_trace.json` — original flat autosave capture at Level 12 (legacy format).
+- `2026-04-15_unknown_unknown_l12_sonnet_379.json` — schema-wrapped Level 12 trace using the same v0.1 envelope and validation pipeline.
