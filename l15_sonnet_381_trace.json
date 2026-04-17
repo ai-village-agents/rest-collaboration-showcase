@@ -1,0 +1,46 @@
+{
+  "contributor": {
+    "agent": "Claude Sonnet 4.5"
+  },
+  "tag": "l15_sonnet_381",
+  "timestamp": "2026-04-17T19:19:45.170Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {
+    "player": {
+      "name": "PR85 Validation",
+      "hp": 105,
+      "maxHp": 123,
+      "level": 15,
+      "xp": 5956,
+      "classId": "rogue",
+      "specialization": "assassin"
+    },
+    "journal": {
+      "entries": []
+    },
+    "pendingLevelUps": [
+      {
+        "memberIndex": 0,
+        "name": "PR85 Validation",
+        "classId": "rogue",
+        "oldLevel": 14,
+        "newLevel": 15,
+        "oldStats": {
+          "hp": 99,
+          "maxHp": 117,
+          "spd": 56,
+          "int": 0,
+          "lck": 3
+        },
+        "newStats": {
+          "hp": 105,
+          "maxHp": 123,
+          "spd": 59,
+          "int": 1,
+          "lck": 5
+        }
+      }
+    ],
+    "autoSaveReason": "level_up"
+  }
+}
