@@ -1,0 +1,304 @@
+{
+  "contributor": {
+    "agent": "Claude Sonnet 4.5"
+  },
+  "tag": "l16_sonnet_384",
+  "timestamp": "2026-04-20T18:29:24.009Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {
+    "questState": {
+      "activeQuests": [],
+      "completedQuests": [],
+      "questProgress": {},
+      "discoveredRooms": [
+        "n",
+        "center",
+        "s"
+      ]
+    },
+    "version": 1,
+    "difficulty": "easy",
+    "rngSeed": 97189595,
+    "phase": "battle-summary",
+    "turn": 1,
+    "player": {
+      "name": "PR85 Validation",
+      "hp": 111,
+      "maxHp": 129,
+      "mp": 65,
+      "maxMp": 65,
+      "atk": 43,
+      "def": 21,
+      "spd": 62,
+      "classId": "rogue",
+      "abilities": [
+        "backstab",
+        "poison-blade",
+        "smoke-bomb",
+        "execute",
+        "shadow-step"
+      ],
+      "level": 16,
+      "xp": 6754,
+      "defending": false,
+      "avatar": "🧝",
+      "inventory": {
+        "potion": 223,
+        "travelerBread": 2,
+        "ironRation": 1,
+        "beastFang": 300,
+        "antidote": 75,
+        "ironOre": 288,
+        "herbBundle": 286,
+        "bomb": 19,
+        "rustySword": 32,
+        "crystalLens": 267,
+        "arcaneEssence": 244,
+        "enchantedThread": 264,
+        "leatherArmor": 40,
+        "bootsOfSwiftness": 6,
+        "dragonScale": 247,
+        "shadowShard": 197,
+        "phoenixFeather": 188,
+        "ancientRune": 146
+      },
+      "backgroundId": "wanderer",
+      "gold": 4613,
+      "statusEffects": [],
+      "equipment": {
+        "weapon": "rustySword",
+        "armor": "leatherArmor",
+        "accessory": "bootsOfSwiftness"
+      },
+      "maxHP": 39,
+      "lck": 3,
+      "specialization": "assassin",
+      "specializationName": "Assassin",
+      "passive": {
+        "id": "deadly-precision",
+        "name": "Deadly Precision",
+        "description": "Critical hits deal 50% more bonus damage.",
+        "type": "crit-bonus",
+        "multiplier": 1.5
+      }
+    },
+    "enemy": {
+      "id": "goblin",
+      "name": "Goblin",
+      "hp": 0,
+      "maxHp": 18,
+      "mp": 5,
+      "maxMp": 5,
+      "atk": 7,
+      "def": 3,
+      "spd": 7,
+      "abilities": [
+        "power-strike",
+        "rending-claws"
+      ],
+      "element": "physical",
+      "xpReward": 8,
+      "goldReward": 6,
+      "aiBehavior": "defensive",
+      "displayName": "Glorious Goblin the Swift",
+      "defending": false,
+      "statusEffects": [],
+      "shieldCount": 2,
+      "maxShields": 2,
+      "weaknesses": [
+        "fire",
+        "holy"
+      ],
+      "immunities": [],
+      "absorbs": [],
+      "isBroken": false,
+      "breakTurnsRemaining": 0,
+      "breakImmune": false,
+      "currentShields": 2
+    },
+    "log": [
+      "Victory! The Glorious Giant Spider of the Depths dissolves.",
+      "Loot: Healing Potion (Common)",
+      "Victory! The Cunning Goblin the Unbound dissolves.",
+      "Victory! The Shadowed Slime the Swift dissolves.",
+      "Victory! The Cunning Giant Spider of the Night dissolves.",
+      "Victory! The Ancient Giant Spider the Swift dissolves.",
+      "Victory! The Vicious Giant Spider the Relentless dissolves.",
+      "You strike for 58 damage. Critical hit!",
+      "Victory! The Mystic Giant Spider of Ruin dissolves.",
+      "Victory! The Corrupted Giant Spider the Eternal dissolves.",
+      "Victory! The Cunning Goblin of Doom dissolves.",
+      "Victory! The Savage Slime of Ruin dissolves.",
+      "Victory! The Shadowed Slime the Relentless dissolves.",
+      "Victory! The Corrupted Goblin of Doom dissolves.",
+      "Victory! The Wicked Giant Spider the Unbound dissolves.",
+      "Victory! The Savage Slime of Ruin dissolves.",
+      "Victory! The Vicious Goblin from Beyond dissolves.",
+      "You strike for 72 damage. Critical hit!",
+      "Victory! The Cunning Slime of Legends dissolves.",
+      "Victory! The Ancient Slime of the Depths dissolves.",
+      "Victory! The Vicious Slime of Doom dissolves.",
+      "Victory! The Savage Giant Spider of Doom dissolves.",
+      "Victory! The Mystic Giant Spider the Swift dissolves.",
+      "Victory! The Glorious Giant Spider of the Depths dissolves.",
+      "Victory! The Corrupted Slime the Swift dissolves.",
+      "Victory! The Shadowed Slime the Unbound dissolves.",
+      "Victory! The Glorious Goblin the Swift dissolves.",
+      "PR85 Validation reached level 16!",
+      "Gained 1 skill point(s)!"
+    ],
+    "world": {
+      "roomRow": 2,
+      "roomCol": 1,
+      "x": 8,
+      "y": 1
+    },
+    "weatherState": {
+      "timeOfDay": "morning",
+      "weather": "clear",
+      "movesInCurrentTime": 3,
+      "totalMoves": 3
+    },
+    "bestiary": {
+      "encountered": [
+        "giant-spider",
+        "slime",
+        "goblin"
+      ],
+      "defeatedCounts": {
+        "giant-spider": 266,
+        "slime": 446,
+        "goblin": 233
+      }
+    },
+    "bestiaryUiState": {
+      "search": ""
+    },
+    "statistics": {
+      "combat": {
+        "totalDamageDealt": 15492,
+        "totalDamageReceived": 229,
+        "totalHealingDone": 131,
+        "totalHealingReceived": 0,
+        "totalHits": 989,
+        "totalMisses": 0,
+        "totalCriticalHits": 0,
+        "totalKills": 945,
+        "totalDeaths": 0,
+        "highestSingleHit": 19,
+        "longestCombo": 0,
+        "perfectVictories": 0,
+        "closeCalls": 0,
+        "statusEffectsInflicted": 0,
+        "statusEffectsReceived": 0,
+        "shieldsDestroyed": 0,
+        "timesStunned": 0
+      },
+      "enemies": {
+        "defeatedByType": {
+          "Giant Spider": 266,
+          "Slime": 446,
+          "Goblin": 233
+        },
+        "totalDefeated": 945,
+        "bossesDefeated": 0,
+        "elitesDefeated": 0,
+        "minionsDefeated": 0
+      },
+      "economy": {
+        "goldEarned": 4598,
+        "goldSpent": 0,
+        "goldFromCombat": 4598,
+        "goldFromQuests": 0,
+        "goldFromSelling": 0,
+        "goldSpentOnItems": 0,
+        "goldSpentOnUpgrades": 0,
+        "goldSpentOnServices": 0,
+        "largestPurchase": 0,
+        "largestSale": 0
+      },
+      "items": {
+        "totalFound": 2427,
+        "totalCrafted": 0,
+        "totalConsumed": 0,
+        "totalSold": 0,
+        "totalEquipped": 0,
+        "weaponsFound": 0,
+        "armorFound": 0,
+        "accessoriesFound": 0,
+        "consumablesUsed": 0,
+        "potionsUsed": 0,
+        "foodConsumed": 0,
+        "enchantmentsApplied": 0,
+        "itemsUpgraded": 0,
+        "legendaryItemsFound": 0,
+        "rareItemsFound": 0
+      },
+      "quests": {
+        "totalCompleted": 0,
+        "mainQuestsCompleted": 0,
+        "sideQuestsCompleted": 0,
+        "dailyChallengesCompleted": 0,
+        "bountiesCompleted": 0,
+        "questsFailed": 0,
+        "questsAbandoned": 0
+      },
+      "exploration": {
+        "roomsVisited": 0,
+        "uniqueRoomsVisited": 0,
+        "secretsDiscovered": 0,
+        "chestsOpened": 0,
+        "trapsTriggered": 0,
+        "trapsDisarmed": 0,
+        "fastTravelsUsed": 0
+      },
+      "social": {
+        "npcsTalkedTo": 0,
+        "reputationGained": 0,
+        "reputationLost": 0,
+        "guildTasksCompleted": 0,
+        "companionLoyaltyEarned": 0
+      },
+      "time": {
+        "totalPlayTimeSeconds": 1199986,
+        "combatTimeSeconds": 25504,
+        "explorationTimeSeconds": 1174482,
+        "lastSessionStart": null,
+        "sessionCount": 0
+      }
+    },
+    "gameStats": {
+      "enemiesDefeated": 926,
+      "enemyKills": {
+        "Giant Spider": 261,
+        "Slime": 440,
+        "Goblin": 225
+      },
+      "totalDamageDealt": 15492,
+      "totalDamageReceived": 229,
+      "itemsUsed": 7,
+      "abilitiesUsed": 0,
+      "goldEarned": 4497,
+      "xpEarned": 6610,
+      "battlesWon": 926,
+      "battlesFled": 1,
+      "turnsPlayed": 998,
+      "shieldsBroken": 0,
+      "weaknessHits": 0,
+      "defeatedWhileBroken": 0
+    },
+    "autoSaveReason": "level_up",
+    "saveMetadata": {
+      "savedAt": "2026-04-20T18:27:22.037Z",
+      "playerName": "PR85 Validation",
+      "playerLevel": 16,
+      "playerClass": "rogue",
+      "turn": 1,
+      "gold": 4613,
+      "location": "Southern Road",
+      "playTime": 0,
+      "version": 1,
+      "reason": "level_up"
+    }
+  }
+}
