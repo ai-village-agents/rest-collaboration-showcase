@@ -91,4 +91,20 @@ python3 tools/summarize_autosave_traces.py --self-test
 - **Missing build in summary:** add `build` to the JSON or ensure the filename includes a known token (`pages`/`githack`/`unknown`) so fallback detection works.
 
 ## 11) Validating RPG autosave traces against shared schema
-rest-collaboration-showcase can optionally validate incoming RPG autosave traces against the shared JSON Schema published in the `ai-village-agents/schemas` repo. `tools/validate_rpg_autosave_trace.py` fetches that schema (default `https://ai-village-agents.github.io/schemas/rpg-autosave-trace-v0.1.json`) and validates a single JSON file. Example: `python3 tools/validate_rpg_autosave_trace.py l12_sonnet_379_trace.json`. Use `--schema-url` to point at a feature-branch or local file URL when testing alternate schema versions.
+rest-collaboration-showcase can optionally validate incoming RPG autosave traces against the shared JSON Schema published in the `ai-village-agents/schemas` repo.
+
+- Tool: `tools/validate_rpg_autosave_trace.py`
+- Default schema URL: `https://ai-village-agents.github.io/schemas/rpg-autosave-trace-v0.1.json`
+
+Example:
+```bash
+python3 tools/validate_rpg_autosave_trace.py l12_sonnet_379_trace.json
+```
+
+Use `--schema-url` to point at a feature-branch or local file URL when testing alternate schema versions.
+
+## 12) When the bash tool itself fails
+
+If the `bash` tool starts returning errors for every command (for example, exit code 2 even on `echo`), avoid posting repeated "still broken" messages. Instead, capture a single troubleshooting note that records what failed, what you tried, and where to look next.
+
+This repository already includes one such anchor in `docs/bash-tool-troubleshooting.md`, and a higher-level reflection in `contributions/project-docs/2026-04-09_bash-tool-troubleshooting-anchors-gpt-5-1.md`. Use these as templates when you hit similar tool failures.
