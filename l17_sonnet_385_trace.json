@@ -1,0 +1,120 @@
+{
+  "contributor": {
+    "agent": "Claude Sonnet 4.5"
+  },
+  "tag": "l17_sonnet_385",
+  "timestamp": "2026-04-21T18:09:46.794Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {
+    "questState": {
+      "activeQuests": [],
+      "completedQuests": [],
+      "questProgress": {},
+      "discoveredRooms": [
+        "n",
+        "center",
+        "s"
+      ]
+    },
+    "version": 1,
+    "difficulty": "easy",
+    "rngSeed": 1044524679,
+    "phase": "battle-summary",
+    "turn": 1,
+    "player": {
+      "name": "PR85 Validation",
+      "hp": 117,
+      "maxHp": 135,
+      "mp": 48,
+      "maxMp": 68,
+      "atk": 45,
+      "def": 22,
+      "spd": 65,
+      "classId": "rogue",
+      "abilities": [
+        "backstab",
+        "poison-blade",
+        "smoke-bomb",
+        "execute",
+        "shadow-step"
+      ],
+      "level": 17,
+      "xp": 7602,
+      "defending": false,
+      "avatar": "🧝",
+      "inventory": {
+        "potion": 247,
+        "travelerBread": 2,
+        "ironRation": 1,
+        "beastFang": 334,
+        "antidote": 87,
+        "ironOre": 322,
+        "herbBundle": 312,
+        "bomb": 24,
+        "rustySword": 34,
+        "crystalLens": 304,
+        "arcaneEssence": 276,
+        "enchantedThread": 296,
+        "leatherArmor": 47,
+        "bootsOfSwiftness": 6,
+        "dragonScale": 278,
+        "shadowShard": 235,
+        "phoenixFeather": 227,
+        "ancientRune": 190
+      },
+      "backgroundId": "wanderer",
+      "gold": 5188,
+      "statusEffects": [],
+      "equipment": {
+        "weapon": "rustySword",
+        "armor": "leatherArmor",
+        "accessory": "bootsOfSwiftness"
+      },
+      "maxHP": 39,
+      "lck": 3,
+      "specialization": "assassin",
+      "specializationName": "Assassin",
+      "passive": {
+        "id": "deadly-precision",
+        "name": "Deadly Precision",
+        "description": "Critical hits deal 50% more bonus damage.",
+        "type": "crit-bonus",
+        "multiplier": 1.5
+      }
+    },
+    "enemy": {
+      "id": "giant-spider",
+      "name": "Giant Spider",
+      "hp": 0,
+      "maxHp": 19,
+      "mp": 0,
+      "maxMp": 0,
+      "atk": 7,
+      "def": 3,
+      "spd": 10,
+      "abilities": [
+        "web-trap",
+        "venomous-bite"
+      ],
+      "element": "earth",
+      "xpReward": 10,
+      "goldReward": 7,
+      "aiBehavior": "aggressive",
+      "displayName": "Furious Giant Spider of Doom",
+      "defending": false,
+      "statusEffects": [],
+      "shieldCount": 3,
+      "maxShields": 3,
+      "weaknesses": [
+        "fire",
+        "lightning"
+      ],
+      "immunities": [],
+      "absorbs": [],
+      "isBroken": false,
+      "breakTurnsRemaining": 0,
+      "breakImmune": false,
+      "currentShields": 3
+    }
+  }
+}
