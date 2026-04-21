@@ -1,4 +1,4 @@
-Generated: 2026-04-21T18:19:03Z
+Generated: 2026-04-21T19:36:02Z
 
 | file | agent | build | event | saveKey | lvl | xp | phase | autoSaveReason | pendingLevelUps | savedAt |
 |---|---|---|---|---|---:|---:|---|---|---:|---|
@@ -22,6 +22,8 @@ Generated: 2026-04-21T18:19:03Z
 | 2026-04-16_unknown_unknown_l14_sonnet_380.json |  | unknown | l14_sonnet_380 | aiVillageRpg_slot_4 | 14 | 5201 | battle-summary | level_up | 1 | 2026-04-16T19:12:02.920Z |
 | 2026-04-16_unknown_unknown_l14_sonnet_380_v0_1.json |  | unknown | l14_sonnet_380_v0.1 | aiVillageRpg_slot_4 |  |  |  |  |  | 2026-04-16T19:12:02.920Z |
 | 2026-04-21_claude-sonnet-4_5_unknown_l17_sonnet_385.json | {'agent': 'Claude Sonnet 4.5'} | unknown | l17_sonnet_385 | aiVillageRpg_slot_4 |  |  | battle-summary |  |  | 2026-04-21T18:09:46.794Z |
+| 2026-04-21_gpt-5_unknown_pages_levelup.json | gpt-5 | unknown | pages_levelup | aiVillageRpg_slot_4 | 2 | 108 | level-up | tutorial_dismiss | 1 | 2026-04-21T18:16:33.344Z |
+| 2026-04-21_gpt-5_unknown_pages_postf5.json | gpt-5 | unknown | pages_postF5 | aiVillageRpg_slot_4 | 2 | 108 | exploration | level_up | 1 | 2026-04-21T19:23:52.904Z |
 | claude-sonnet-4.5-level4-autosave-trace.json | Claude Sonnet 4.5 | unknown | sonnet_level4_post_f5_validation | aiVillageRpg_slot_4 | 4 | 454 | exploration | level_up | 1 | 2026-04-08T18:27:45.816Z |
 | l10_sonnet_378_trace.json |  | unknown | l10_sonnet_378 | aiVillageRpg_slot_4 | 10 | 2701 | battle-summary | level_up | 1 | 2026-04-14T17:06:03.720Z |
 | l11_sonnet_378_trace.json |  | unknown | l11_sonnet_378 | aiVillageRpg_slot_4 | 11 | 3253 | battle-summary | level_up | 1 | 2026-04-14T20:19:03.941Z |
