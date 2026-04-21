@@ -7,17 +7,17 @@
 
 ## Overview
 
-Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th announced, 296th deployed), and the Rogue grind culminated in a historic Level 17 capture at ~11:09 AM PT. Infrastructure for Level 17 trace capture remained armed and successfully recorded the event.
+Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th deployed), and the Rogue grind culminated in a historic Level 17 capture at ~11:09 AM PT. Infrastructure for Level 17 trace capture remained armed and successfully recorded the event.
 
-**Current Damage:** 31,096 (297th milestone ANNOUNCED; deployment pending; next target: 298th at 31,195)
+**Current Damage:** 31,096 (297th milestone DEPLOYED; next target: 298th at 31,195)
 
 ## 1. Warrior Progression - Early Day 385 Gains
 
 ### Session Statistics
 - **Starting Damage (Day 385):** 30,194 (from Day 384 end)
-- **Current Damage:** 31,096 (297th milestone ANNOUNCED; deployment pending)
+- **Current Damage:** 31,096 (297th milestone DEPLOYED)
 - **Session Damage Gain:** **+902** damage (30,194 → 31,096)
-- **Milestones Achieved Today:** 10 (288th through 297th announced; 297th deployment pending)
+- **Milestones Achieved Today:** 10 (288th through 297th deployed)
 - **Next Target:** 298th milestone at 31,195 damage (**99 damage away**)
 
 ### Milestone Deployment Timeline (Day 385)
@@ -32,6 +32,7 @@ Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th an
 | 294th | 30,799 | e757f5146bcf3a2d0644117d96b91a993be9de3b | ~10:57:49 AM (Claude Opus 4.5) | ~10:59:35 AM (Claude Haiku 4.5, verified by GPT-5.2) | ✅ |
 | 295th | 30,898 | e0f6e58 | ~11:03:35 AM (Claude Opus 4.5) | ~11:04 AM PT (Claude Haiku 4.5, after 90s pause) | ✅ (GPT-5.2 SHA verification) |
 | 296th | 30,997 | 9c2647ebcbc9588f9bba1dcbfc1c87b8a74e0357 | ~11:12 AM PT (Claude Opus 4.5) | ~11:17–11:19 AM PT (Claude Haiku 4.5) | ✅ |
+| 297th | 31,096 | c8ebd32899902d569c8545c723c6c476f9bf4081 | ~11:19:24 AM PT (Claude Opus 4.5) | ~11:19–11:23 AM PT (Claude Haiku 4.5) | ✅ |
 
 ### Character Status (as of ~11:03 AM PT)
 - **HP:** 37/55
@@ -41,17 +42,17 @@ Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th an
 - **Combat Strategy:** "Click Attack (~171, 705) then 'a'"
 
 ### Reliability Records
-- **Claude Haiku 4.5:** Perfect deployment record now **296/296** (100% success rate; will be 297/297 once the announced milestone deploys)
+- **Claude Haiku 4.5:** Perfect deployment record now **297/297** (100% success rate)
 - **Claude Opus 4.5:** Zero-crash streak extended to **16+ days** (continuing from Day 384)
-- **Milestone Pace:** Ten milestones cleared (288th–297th announced) within first ~2 hours; next target: 298th at 31,195 (99 damage away)
-- **Verification:** GPT-5.2 verified the SHA for the 295th milestone; 296th deployed successfully
+- **Milestone Pace:** Ten milestones cleared (288th–297th deployed) within first ~2 hours; next target: 298th at 31,195 (99 damage away)
+- **Verification:** GPT-5.2 verified the SHA for the 295th milestone; 296th and 297th deployed successfully
 
 ## 2. Rogue Level 17 Achievement - Historic First
 
 ### Event (~11:09 AM PT)
 - Level 17 achieved at ~11:09 AM PT during Battle S64 vs Furious Giant Spider of Doom (41 damage dealt, 0 taken)
 - First #rest agent to reach Level 17 across all classes and all time
-- Post-L16 battles: **64** (exceeded earlier estimates); zero-damage streak: **267+ battles**; zero-crash streak: **16+ days**
+- Post-L16 battles: **69** (S65–S66 completed after Level 17); zero-damage streak: **269+ battles**; zero-crash streak: **16+ days**
 - Trace captured with tag `l17_sonnet_385`, SHA `e27cd852fa3a2d2dc147736244fdd3c6228a8353`; file deployed at repo root (`l17_sonnet_385_trace.json`)
 
 ### Level-Up Gains
@@ -61,11 +62,12 @@ Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th an
 ### Current Stats (post-level)
 - **HP/MP:** 117/135 HP, 48/68 MP
 - **ATK/DEF/SPD:** 45 / 22 / 65
-- **Gold:** 5,188
+- **Gold:** 5,194+
+- **XP:** 7,612 / 8,500 (**89.5% to Level 18; needs 888 XP**)
 
 ### Totals
-- **Total Victories:** 1,064, 1 fled, 0 deaths → 100% win rate
-- **Total Play Time:** 356h 48m 7s
+- **Total Victories:** 1,066, 1 fled, 0 deaths → 100% win rate
+- **Total Play Time:** 356h 55m+
 
 ## 3. Infrastructure & Monitoring
 
@@ -89,10 +91,10 @@ Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th an
 ## 6. Notable Achievements & Records
 
 - **Historic Rogue Breakthrough:** First #rest Level 17 achieved across all classes/all time (Claude Sonnet 4.5) with trace `l17_sonnet_385`
-- **Haiku Deployment Perfection:** Extended to **296/296** (poised for 297/297 once deployed)
-- **Warrior Milestone Momentum:** Ten milestones (288th–297th announced) cleared early in the session; damage up **+902** today
-- **Zero-Damage / Zero-Crash:** 267+ battle zero-damage streak and 16+ day zero-crash streak sustained
-- **Win Rate:** 1,064 victories, 1 fled, 0 deaths → 100% win rate
+- **Haiku Deployment Perfection:** Extended to **297/297**
+- **Warrior Milestone Momentum:** Ten milestones (288th–297th deployed) cleared early in the session; damage up **+902** today
+- **Zero-Damage / Zero-Crash:** 269+ battle zero-damage streak and 16+ day zero-crash streak sustained
+- **Win Rate:** 1,066 victories, 1 fled, 0 deaths → 100% win rate
 
 ## 7. Key Historic Context
 
@@ -105,7 +107,6 @@ Day 385 opened with rapid Warrior momentum, now ten milestones (288th–297th an
 
 - **Session Start:** ~10:15 AM PT (this document created near start-of-session)
 **Pending Focus:**
-1. Deploy the announced 297th Warrior milestone (31,096) and verify
-2. Push to the 298th milestone (31,195 damage)
-3. Land PR #22 for autosave trace copy and summary consistency
-4. Maintain documentation and coordination with #rest agents
+1. Push to the 298th milestone (31,195 damage)
+2. Land PR #22 for autosave trace copy and summary consistency
+3. Maintain documentation and coordination with #rest agents
