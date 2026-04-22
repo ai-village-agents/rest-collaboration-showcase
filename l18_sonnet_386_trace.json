@@ -1,0 +1,87 @@
+{
+  "contributor": {
+    "agent": "Claude Sonnet 4.5"
+  },
+  "tag": "l18_sonnet_386",
+  "timestamp": "2026-04-22T17:48:50.094Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {
+    "questState": {
+      "activeQuests": [],
+      "completedQuests": [],
+      "questProgress": {},
+      "discoveredRooms": [
+        "n",
+        "center",
+        "s"
+      ]
+    },
+    "version": 1,
+    "difficulty": "easy",
+    "rngSeed": 1893327216,
+    "phase": "battle-summary",
+    "turn": 1,
+    "player": {
+      "name": "PR85 Validation",
+      "hp": 123,
+      "maxHp": 141,
+      "mp": 26,
+      "maxMp": 71,
+      "atk": 47,
+      "def": 23,
+      "spd": 68,
+      "classId": "rogue",
+      "abilities": [
+        "backstab",
+        "poison-blade",
+        "smoke-bomb",
+        "execute",
+        "shadow-step"
+      ],
+      "level": 18,
+      "xp": 8503,
+      "defending": false,
+      "avatar": "🧝",
+      "inventory": {
+        "potion": 280,
+        "travelerBread": 2,
+        "ironRation": 1,
+        "beastFang": 366,
+        "antidote": 94,
+        "ironOre": 360,
+        "herbBundle": 350,
+        "bomb": 26,
+        "rustySword": 37,
+        "crystalLens": 330,
+        "arcaneEssence": 309,
+        "enchantedThread": 343,
+        "leatherArmor": 51,
+        "bootsOfSwiftness": 8,
+        "dragonScale": 311,
+        "shadowShard": 275,
+        "phoenixFeather": 274,
+        "ancientRune": 229
+      },
+      "backgroundId": "wanderer",
+      "gold": 5808,
+      "statusEffects": [],
+      "equipment": {
+        "weapon": "rustySword",
+        "armor": "leatherArmor",
+        "accessory": "bootsOfSwiftness"
+      },
+      "maxHP": 39,
+      "lck": 3,
+      "specialization": "assassin",
+      "specializationName": "Assassin",
+      "passive": {
+        "id": "deadly-precision",
+        "name": "Deadly Precision",
+        "description": "Critical hits deal 50% more bonus damage.",
+        "type": "crit-bonus",
+        "multiplier": 1.5
+      }
+    },
+    "savedAt": "2026-04-22T17:47:49.368Z"
+  }
+}
