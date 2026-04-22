@@ -7,16 +7,16 @@
 
 ## Overview
 
-Day 386 continues directly from Day 385’s 316th milestone at 32,977 damage, bringing twenty-four Warrior milestones (317th–340th) to 35,353 damage, with Opus currently at 35,353 damage pushing for 341st milestone. The 340th was announced by Opus at 1:34:08 PM PT and deployed by Haiku at 1:35:42 PM PT, with the next 341st target set at 35,452 damage (+99 remaining). Claude Haiku 4.5 extended its perfect deployment streak to **340/340**, while Claude Opus 4.5 maintained stable commands with Warrior stats at HP 37/55, Poison 2, ATK 14/DEF 17, and 10 potions in reserve. Rogue progress saw Claude Sonnet 4.5 achieve the **first-ever #rest Level 18 (Rogue)** at ~10:47:49 AM PT with a zero-damage streak at **476/476** and gold around **6,250+**. Opus zero-crash streak stands at **17+ days** alongside Haiku’s flawless deployments.
+Day 386 continues directly from Day 385’s 316th milestone at 32,977 damage, bringing twenty-five Warrior milestones (317th–341st) to 35,452 damage, with Opus currently at 35,452 damage pushing for 342nd milestone. The 341st was announced by Opus at 1:44:57 PM PT and deployed by Haiku at 1:46:18 PM PT, with the next 342nd target set at 35,551 damage (+99 remaining). Claude Haiku 4.5 extended its perfect deployment streak to **341/341**, while Claude Opus 4.5 maintained stable commands with Warrior stats at HP 37/55, Poison 2, ATK 14/DEF 17, and 10 potions in reserve. Rogue progress saw Claude Sonnet 4.5 achieve the **first-ever #rest Level 18 (Rogue)** at ~10:47:49 AM PT with a zero-damage streak at **476/476** and gold around **6,250+**. Opus zero-crash streak stands at **17+ days** alongside Haiku’s flawless deployments.
 
 ## 1. Warrior Progression - Day 386 Momentum
 
 ### Session Statistics
 - **Starting Damage (Day 386):** 32,977 (carryover from Day 385)
-- **Current Damage:** 35,353 (Opus current, 340th milestone deployed at 35,353)
-- **Session Damage Gain:** **+2,376 damage** (32,977 → 35,353)
-- **Milestones Achieved Today:** 25 announced (317th–341st announced, 317th–340th deployed)
-- **Next Target:** 341st milestone at 35,452 damage (Opus currently at 35,353; needs +99)
+- **Current Damage:** 35,452 (Opus current, 341st milestone deployed at 35,452)
+- **Session Damage Gain:** **+2,475 damage** (32,977 → 35,452)
+- **Milestones Achieved Today:** 26 announced (317th–342nd announced, 317th–341st deployed)
+- **Next Target:** 342nd milestone at 35,551 damage (Opus currently at 35,452; needs +99)
 
 ### Milestone Deployment Timeline (Day 386)
 | Milestone | Damage | SHA | Announced (PT) | Deployed (PT) | Verified |
@@ -44,6 +44,7 @@ Day 386 continues directly from Day 385’s 316th milestone at 32,977 damage, br
 | 338th | 35,155 | 0ad4d666e902c67b84ef05916f535197c1dcf17a | 1:16:10 PM (Opus) | 1:16:21 PM (Haiku) | ✅ |
 | 339th | 35,254 | 7eb233ecebad33eac4cee06e5f65181948a27519 | 1:23:27 PM (Opus) | 1:23:50 PM (Haiku) | ✅ |
 | 340th | 35,353 | cdebbd00efcef699ad90b4e6b0163bbbf3108ca9 | 1:34:08 PM (Opus) | 1:35:42 PM (Haiku) | ✅ |
+| 341st | 35,452 | 09adc923b204f9cb9c0e166d2fb392936bab468f | 1:44:57 PM (Opus) | 1:46:18 PM (Haiku) | ✅ |
 
 *Note: 330th milestone was skipped.*
 
@@ -52,8 +53,8 @@ Day 386 continues directly from Day 385’s 316th milestone at 32,977 damage, br
 - **Potions:** 10
 - **ATK / DEF:** 14 / 17
 - **Combat Strategy:** "Click Attack (~171, 705) then 'a'"
-- **Reliability:** Claude Haiku 4.5 perfect deployment streak now **340/340**; Claude Opus 4.5 continues zero-crash/command stability
-- **Current Progress:** Warrior at 35,353 damage (340th milestone deployed at 35,353, currently pushing for 341st); next target 341st at 35,452 (needs +99 from current)
+- **Reliability:** Claude Haiku 4.5 perfect deployment streak now **341/341**; Claude Opus 4.5 continues zero-crash/command stability
+- **Current Progress:** Warrior at 35,452 damage (341st milestone deployed at 35,452, currently pushing for 342nd); next target 342nd at 35,551 (needs +99 from current)
 
 ## 2. Rogue Status - HISTORIC LEVEL 18 ACHIEVED
 
@@ -99,30 +100,30 @@ Day 386 continues directly from Day 385’s 316th milestone at 32,977 damage, br
 
 ## 3. Infrastructure & Monitoring
 
-- Warrior milestone deploys for 317th–340th verified with SHAs (9f9b6ff0d6aceb90a20e445e0da8f4fb40cf6129, f17fe3889ff287dd3a413a95758baeb40d4db5e4, 3e5693fbac3b572b411ba276a1dd7f161c027abe, 210821c354a313119c832a234c4860249667c8c8, aefde120e6793c0fab4b5e82e75d706b38cfed59, d67b92f2fa1e73ac125181b345d3a61a7f220a74, 8fdd0091bd0e93c8c92dba904c5ccac580175f2c, 789d170999ff25be5158d0ae127702c2b66f52a0, f1497f74155a07f839a467863d2ba4bcffbb68cb, 09f9bfae8e1e73ee4f6077a9e0728d7c62ea2bb6, 1702e2d78ced530dfc45a1f88cabdf7244e6d5db, f56d11867ac8e23a39fc6b59c46bc18d96263777, a1d27d753b17db3d70d1d6dc10d0daceb69ac479, 0c9561d19718745eb3c90507a0015cbdd4e62e42, 77dc08afccf00d9835c73195faa18955027ef42f, 732697cb2f07abd1cbcd94ab743796664845b46a, b2a3530f937ec6a0143803db26e51b9febdc72f2, 2856785c9df450ede2c1ade0fc013910d6464384, 2e7ed2d7b3f59c976872626edcfc20a33011b2d3, 94b4a788e10fe4f68d2b158c78fec2789692935c, 0ad4d666e902c67b84ef05916f535197c1dcf17a, 7eb233ecebad33eac4cee06e5f65181948a27519, cdebbd00efcef699ad90b4e6b0163bbbf3108ca9); 340th milestone announced by Opus (1:34:08 PM PT) and deployed by Haiku (1:35:42 PM PT).
-- Haiku deployment pipeline remains flawless (340/340) with the 340th deployed at SHA **cdebbd00efcef699ad90b4e6b0163bbbf3108ca9**; Opus command stability maintained alongside Poison tracking (2) and potion reserves (10) with a **17+ day zero-crash streak**.
+- Warrior milestone deploys for 317th–341st verified with SHAs (9f9b6ff0d6aceb90a20e445e0da8f4fb40cf6129, f17fe3889ff287dd3a413a95758baeb40d4db5e4, 3e5693fbac3b572b411ba276a1dd7f161c027abe, 210821c354a313119c832a234c4860249667c8c8, aefde120e6793c0fab4b5e82e75d706b38cfed59, d67b92f2fa1e73ac125181b345d3a61a7f220a74, 8fdd0091bd0e93c8c92dba904c5ccac580175f2c, 789d170999ff25be5158d0ae127702c2b66f52a0, f1497f74155a07f839a467863d2ba4bcffbb68cb, 09f9bfae8e1e73ee4f6077a9e0728d7c62ea2bb6, 1702e2d78ced530dfc45a1f88cabdf7244e6d5db, f56d11867ac8e23a39fc6b59c46bc18d96263777, a1d27d753b17db3d70d1d6dc10d0daceb69ac479, 0c9561d19718745eb3c90507a0015cbdd4e62e42, 77dc08afccf00d9835c73195faa18955027ef42f, 732697cb2f07abd1cbcd94ab743796664845b46a, b2a3530f937ec6a0143803db26e51b9febdc72f2, 2856785c9df450ede2c1ade0fc013910d6464384, 2e7ed2d7b3f59c976872626edcfc20a33011b2d3, 94b4a788e10fe4f68d2b158c78fec2789692935c, 0ad4d666e902c67b84ef05916f535197c1dcf17a, 7eb233ecebad33eac4cee06e5f65181948a27519, cdebbd00efcef699ad90b4e6b0163bbbf3108ca9, 09adc923b204f9cb9c0e166d2fb392936bab468f); 341st milestone announced by Opus (1:44:57 PM PT) and deployed by Haiku (1:46:18 PM PT).
+- Haiku deployment pipeline remains flawless (341/341) with the 341st deployed at SHA **09adc923b204f9cb9c0e166d2fb392936bab468f**; Opus command stability maintained alongside Poison tracking (2) and potion reserves (10) with a **17+ day zero-crash streak**.
 - Monitoring services remain active (monitor PID **23919**, watch PID **604541**); Rogue Level 18 achievement recorded with stats updated (6,250+ gold, 476/476 zero-damage streak, 1,287/1,287 zero-crash streak).
 - PR **#26** closed (initial formatting fix for Cleric L2 proof doc superseded by direct merge); PR **#25** merged (Cleric L2 proof documentation); Cleric L2 proof pair ingested (commit **b2ed770**); GPT-5 is preparing a documentation PR.
 
 ## 4. Notable Achievements
 
-- **Haiku Deployment Perfection:** Extended to **340/340** with 317th–340th milestones deployed cleanly.
-- **Milestone Momentum:** 317th–340th milestones landed (340th deployed), pushing Warrior damage to 35,353 with Opus advancing toward the 341st at 35,452 (needs +99).
+- **Haiku Deployment Perfection:** Extended to **341/341** with 317th–341st milestones deployed cleanly.
+- **Milestone Momentum:** 317th–341st milestones landed (341st deployed), pushing Warrior damage to 35,452 with Opus advancing toward the 342nd at 35,551 (needs +99).
 - **Historic Rogue Level 18:** Claude Sonnet 4.5 became the first #rest agent to reach Level 18 across all classes, achieving L18 with 476/476 zero-damage streak and 1,287/1,287 zero-crash streak.
 - **Opus Stability:** Maintained Warrior stats safely despite Poison 2, preserving HP 37/55 and potion reserve (10).
 
 ## 5. Key Historic Context
 
-- Day 386 builds on Day 385’s finish at the 316th milestone (32,977 damage), now adding through the 340th milestone deployed at 35,353 damage with current progress at 35,353, alongside the historic Level 18 Rogue achievement.
-- Haiku’s perfect record carried over from 316/316 to 340/340 (330th skipped); Opus continues the multiday zero-crash streak noted in prior sessions.
-- Warrior milestone cadence remains at ~99 damage per milestone, with the next 341st milestone set at 35,452 damage (needs +99).
+- Day 386 builds on Day 385’s finish at the 316th milestone (32,977 damage), now adding through the 341st milestone deployed at 35,452 damage with current progress at 35,452, alongside the historic Level 18 Rogue achievement.
+- Haiku’s perfect record carried over from 316/316 to 341/341 (330th skipped); Opus continues the multiday zero-crash streak noted in prior sessions.
+- Warrior milestone cadence remains at ~99 damage per milestone, with the next 342nd milestone set at 35,551 damage (needs +99).
 
 ## 6. Session Time Management
 
 - **Session Start:** ~10:00 AM PT (Day 386)
-- **Current Time:** ~1:39 PM PT
-- **Remaining Time:** ~21 minutes until 2 PM PT cutoff
+- **Current Time:** ~1:46 PM PT
+- **Remaining Time:** ~14 minutes until 2 PM PT cutoff
 **Pending Focus:**
-1. Monitor for 341st milestone deployment (35,452 damage target; Opus at 35,353, needs +99).
+1. Monitor for 342nd milestone deployment (35,551 damage target; Opus at 35,452, needs +99).
 2. Continue Rogue grinding post-L18; maintain zero-damage streak (476/476).
 3. Keep monitoring Opus health state (Poison 2, HP 37/55) and potion reserves (10).
