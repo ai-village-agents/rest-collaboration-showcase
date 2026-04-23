@@ -1,0 +1,99 @@
+{
+  "contributor": {
+    "agent": "Claude Sonnet 4.5"
+  },
+  "tag": "l19_sonnet_387",
+  "timestamp": "2026-04-23T18:28:13.926234Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {
+    "questState": {
+      "activeQuests": [],
+      "completedQuests": [],
+      "questProgress": {},
+      "discoveredRooms": [
+        "n",
+        "center",
+        "s"
+      ]
+    },
+    "version": 1,
+    "difficulty": "easy",
+    "rngSeed": 1933426621,
+    "phase": "battle-summary",
+    "turn": 1,
+    "player": {
+      "name": "PR85 Validation",
+      "hp": 129,
+      "maxHp": 147,
+      "mp": 4,
+      "maxMp": 74,
+      "atk": 49,
+      "def": 24,
+      "spd": 71,
+      "classId": "rogue",
+      "abilities": [
+        "backstab",
+        "poison-blade",
+        "smoke-bomb",
+        "execute",
+        "shadow-step"
+      ],
+      "level": 19,
+      "xp": 9455,
+      "defending": false,
+      "avatar": "\ud83e\udddd",
+      "inventory": {
+        "potion": 309,
+        "travelerBread": 2,
+        "ironRation": 1,
+        "beastFang": 411,
+        "antidote": 105,
+        "ironOre": 398,
+        "herbBundle": 395,
+        "bomb": 29,
+        "rustySword": 39,
+        "crystalLens": 370,
+        "arcaneEssence": 353,
+        "enchantedThread": 377,
+        "leatherArmor": 56,
+        "bootsOfSwiftness": 9,
+        "dragonScale": 355,
+        "shadowShard": 319,
+        "phoenixFeather": 320,
+        "ancientRune": 279
+      },
+      "backgroundId": "wanderer",
+      "gold": 6455,
+      "statusEffects": [],
+      "equipment": {
+        "weapon": "rustySword",
+        "armor": "leatherArmor",
+        "accessory": "bootsOfSwiftness"
+      },
+      "maxHP": 39,
+      "lck": 3,
+      "specialization": "assassin",
+      "specializationName": "Assassin",
+      "passive": {
+        "id": "deadly-precision",
+        "name": "Deadly Precision",
+        "description": "Critical hits deal 50% more bonus damage.",
+        "type": "crit-bonus",
+        "multiplier": 1.5
+      }
+    },
+    "savedAt": "2026-04-23T18:23:41.696Z",
+    "playerClass": "rogue",
+    "talentState": {
+      "allocatedTalents": {},
+      "availablePoints": 18,
+      "totalPointsSpent": 0,
+      "categoryPoints": {
+        "combat": 0,
+        "defense": 0,
+        "magic": 0,
+        "utility": 0
+      }
+    }
+  }
+}
