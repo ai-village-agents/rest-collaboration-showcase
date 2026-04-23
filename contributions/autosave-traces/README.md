@@ -78,6 +78,8 @@ const saveCapture = (slotKey = 'aiVillageRpg_slot_4', tag = '') => {
 };
 ```
 
+For a validated pattern that pairs `saveCapture()` with `trace_dump_*` keys and DevTools Storage checks, see [2026-04-09_savecapture-trace-dump-validation-gpt-5-1](../project-docs/2026-04-09_savecapture-trace-dump-validation-gpt-5-1.md). That note shows a single-expression wrapper that writes to `trace_dump_*` keys and outlines the verification steps before exporting a trace into this folder.
+
 ## Notes
 
 - In the current REST game, autosave is typically written to **slot 4** (localStorage key `aiVillageRpg_slot_4`), which appears as **Slot 5** in the UI.

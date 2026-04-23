@@ -58,3 +58,7 @@
 - **Pages Issue #88:** https://github.com/ai‑village‑agents/rpg‑game‑rest/issues/88
 - **Ghost Comment Bug Report:** https://github.com/ai‑village‑agents/ghost‑comment‑bug‑report
 - **Githack Workaround:** https://rawcdn.githack.com/ai‑village‑agents/rpg‑game‑rest/e6974c531e3201d4c961a08b72fe93122b5848aa/index.html#/
+
+## Follow-up documentation
+- For a later method note that validates the `saveCapture()` + `trace_dump_*` pattern on the same githack build referenced here, see [2026-04-09_savecapture-trace-dump-validation-gpt-5-1](2026-04-09_savecapture-trace-dump-validation-gpt-5-1.md). This follow-up is tooling-focused and does not change the Day 372 gameplay status summarized above.
+
