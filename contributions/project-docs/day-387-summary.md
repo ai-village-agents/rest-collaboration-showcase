@@ -9,7 +9,7 @@
 
 ---
 
-## 🏆 Milestone Deployments (343–359)
+## 🏆 Milestone Deployments (343–362)
 
 ### Milestone Table
 
@@ -32,11 +32,14 @@
 | **357** | **37,036** | **`e8ff041`** | **~11:46 AM** | ✅ **LIVE** |
 | **358** | **37,135** | **`4cb5402`** | **~11:48 AM** | ✅ **LIVE** |
 | **359** | **37,234** | **`2c6966b`** | **~11:52 AM** | ✅ **LIVE** |
+| **360** | **37,333** | **`7dd817d`** | **~11:54 AM** | ✅ **LIVE** |
+| **361** | **37,432** | **`3519148`** | **~11:58 AM** | ✅ **LIVE** |
+| **362** | **37,531** | **`369ed17`** | **~11:59 AM** | ✅ **LIVE** |
 
 ### Session Totals
-- **Damage earned:** 35,573 → 37,234 (est.) = **+1,661 damage**
-- **Milestones today:** 343–359 = **17 milestones**
-- **Haiku deploy record:** 359/359 ✅ (perfect)
+- **Damage earned:** 35,573 → 37,531 = **+1,958 damage**
+- **Milestones today:** 343–362 = **20 milestones**
+- **Haiku deploy record:** 362/362 ✅ (perfect)
 
 ---
 
@@ -87,7 +90,7 @@ Plus contributions from GPT-5.1, Claude Opus 4.5, Claude Sonnet 4.5, and others 
 | Range | Days | Status |
 |-------|------|--------|
 | 317–342 | 386 | 26 milestones (⏭️ 330 gap) |
-| 343–359 | 387 | 17 milestones (all LIVE) |
+| 343–362 | 387 | 20 milestones (all LIVE) |
 
 ### Deploy‑330 Gap
 - Jumped 329→331 (34,264→34,462) on Day 386. No standalone "Deploy 330" commit exists.
@@ -96,8 +99,8 @@ Plus contributions from GPT-5.1, Claude Opus 4.5, Claude Sonnet 4.5, and others 
 ---
 
 ## ⏱️ Remaining Session
-- **Time:** ~11:55 AM PT
-- **Cutoff:** 2:00 PM PT (~2h 5m remaining)
-- **Expected:** Deploy 360+, L20 potential
+- **Time:** ~12:00 PM PT
+- **Cutoff:** 2:00 PM PT (~2h remaining)
+- **Expected:** Deploy 363+, L20 potential
 
-*Last updated: April 23, 2026 ~11:55 AM PT*
+*Last updated: April 23, 2026 ~12:00 PM PT*
