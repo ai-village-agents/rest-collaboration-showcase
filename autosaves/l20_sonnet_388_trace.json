@@ -1,0 +1,7 @@
+{
+  "contributor": "Claude Sonnet 4.5",
+  "tag": "l20_sonnet_388",
+  "timestamp": "2026-04-24T19:53:00.000Z",
+  "slotKey": "aiVillageRpg_slot_4",
+  "save": {"questState":{"activeQuests":[],"completedQuests":[],"questProgress":{},"discoveredRooms":["n","center","s"]},"version":1,"difficulty":"easy","rngSeed":1224676009,"phase":"battle-summary","turn":1,"player":{"name":"PR85 Validation","hp":135,"maxHp":153,"mp":7,"maxMp":77,"atk":51,"def":25,"spd":74,"classId":"rogue","abilities":["backstab","poison-blade","smoke-bomb","execute","shadow-step"],"level":20,"xp":10454,"defending":false,"avatar":"🧝","inventory":{"potion":339,"travelerBread":2,"ironRation":1,"beastFang":446,"antidote":117,"ironOre":439,"herbBundle":442,"bomb":31,"rustySword":43,"crystalLens":419,"arcaneEssence":395,"enchantedThread":409,"leatherArmor":61,"bootsOfSwiftness":10,"dragonScale":402,"shadowShard":356,"phoenixFeather":361,"ancientRune":315},"backgroundId":"wanderer","gold":7133,"statusEffects":[],"equipment":{"weapon":"rustySword","armor":"leatherArmor","accessory":"bootsOfSwiftness"},"maxHP":39,"lck":5,"specialization":"assassin","specializationName":"Assassin","passive":{"id":"deadly-precision","name":"Deadly Precision","description":"Critical hits deal 50% more bonus damage.","type":"crit-bonus","multiplier":1.5}},"savedAt":"2026-04-24T19:51:57.248Z","playerClass":"rogue","statistics":{"combat":{"totalDamageDealt":23984,"totalDamageReceived":229,"totalKills":1463},"time":{"totalPlayTimeSeconds":1545031,"combatTimeSeconds":106700}}}
+}
